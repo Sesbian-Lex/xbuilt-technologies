@@ -17,7 +17,8 @@ function ServiceCarousel(){
     useEffect(()=>{
         carouselWidth.current = carouselRef.current.getBoundingClientRect().width
         console.log(carouselWidth.current)
-        setOffset(0);
+        leftArrowHandle();
+        rightArrowHandle();
     },[])
 
     //arrow handles to change the offset
