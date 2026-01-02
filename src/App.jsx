@@ -6,6 +6,16 @@ import ScrollBar from './ScrollBar.jsx'
 import NavBar  from './NavBar.jsx'
 import FloatingLogoCanvas from './FloatingLogoCanvas.jsx'
 import ServiceCarousel from './ServiceCarousel.jsx'
+import LandingPageImg from './assets/landing-page-img.png'
+import LandingPageIcon from './assets/landing-page-icon.png'
+import FunnelDesign from './assets/funnel-design.png'
+import FunnelDesignIcon from './assets/funnel-design-icon.png'
+import CRMPipe from './assets/crm-pipelines.png'
+import CRMPipeIcon from './assets/crm-pipelines-icon.png'
+import WebDesign from './assets/web-design.png'
+import WebDesignIcon from './assets/web-design-icon.png'
+import VidEdit from './assets/vid-edit.png'
+import VidEditIcon from './assets/vid-edit-icon.png'
 
 function App() {
   const [progress, setProgress] = useState(0.25)
@@ -79,14 +89,101 @@ function App() {
           streamlined workflows, every service we provide is designed to save you time, capture more
           leads, and turn traffic into paying clients.
         </h3>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+
+        <br/><br/><br/><br/><br/><br/><br/>
         <ServiceCarousel/>
+        <br/><br/><br/><br/><br/><br/><br/>
+
+        <div id='landingPage' className='service-explanation-wrapper'>
+          <div className='service-img-wrapper'>
+              <img src={LandingPageImg}/>
+          </div>
+          <div className='service-text-wrapper'>
+            <img src={LandingPageIcon}/>
+            <h2>
+              1) Landing Pages Design
+            </h2>
+            <h3>
+              Custom-built pages designed to attract, engage, and
+              convert casual visitors into high-quality leads
+            </h3>
+          </div>
+        </div>
+
+        <br/><br/><br/>
+
+        <div id='funnelDesign' className='service-explanation-wrapper'>
+          <div className='service-img-wrapper'>
+              <img src={FunnelDesign}/>
+          </div>
+          <div className='service-text-wrapper'>
+            <img src={FunnelDesignIcon}/>
+            <h2>
+              2) Funnel Design & Automation
+            </h2>
+            <h3>
+              Funnel design and automation that captures leads and
+              nurtures them with personalized, automated workflows
+            </h3>
+          </div>
+        </div>
+
+        <br/><br/><br/>
+
+        <div id='crmPipe' className='service-explanation-wrapper'>
+          <div className='service-img-wrapper'>
+              <img src={CRMPipe}/>
+          </div>
+          <div className='service-text-wrapper'>
+            <img src={CRMPipeIcon}/>
+            <h2>
+              3) CRM & Pipelines
+            </h2>
+            <h3>
+              Integrated CRM systems and sales pipelines that organize
+              leads, track opportunities, and keep your sales process
+              running smoothly.
+            </h3>
+          </div>
+        </div>
+
+        <br/><br/><br/>
+
+        <div id='webDesign' className='service-explanation-wrapper'>
+          <div className='service-img-wrapper'>
+              <img src={WebDesign}/>
+          </div>
+          <div className='service-text-wrapper'>
+            <img src={WebDesignIcon}/>
+            <h2>
+              4) Website Design & Development
+            </h2>
+            <h3>
+              Custom-designed websites that captivate, build credibility,
+              and guide visitors to take meaningful action
+            </h3>
+          </div>
+        </div>
+
+                <br/><br/><br/>
+
+        <div id='vidEdit' className='service-explanation-wrapper'>
+          <div className='service-img-wrapper'>
+              <img src={VidEdit}/>
+          </div>
+          <div className='service-text-wrapper'>
+            <img src={VidEditIcon}/>
+            <h2>
+              5) Video Editing
+            </h2>
+            <h3>
+              Professional video editing that turns your content into
+              engaging, high-quality videos that captivate your audience
+              and strengthen your brand
+            </h3>
+          </div>
+        </div>
+
       </section>
 
       <section className='section4' id=''>

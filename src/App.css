@@ -155,3 +155,47 @@ section{
   color: var(--gray-text-color);
 }
 
+.service-explanation-wrapper{
+  display: flex;
+  flex-direction: row;
+  height: 35vh;
+  padding: 0 20%;
+}
+
+.service-img-wrapper{
+  display: flex;
+  flex: 0.4;
+  height: 100%;
+}
+
+.service-img-wrapper img{
+  height: 100%;
+}
+
+.service-text-wrapper{
+  display: flex;
+  flex-direction: column;
+  flex: 0.6;
+  height: 100%;
+  gap: 8px;
+  padding: 3%;
+}
+
+.service-text-wrapper img{
+  width: 15%;
+  aspect-ratio: 1/1;
+  align-self: left;
+}
+
+.service-text-wrapper h2, .service-text-wrapper h3{
+  padding: 0 5%;
+  text-align: left;
+}
+
+.service-text-wrapper h3{
+  color: var(--gray-text-color);
+}
+
+
+
+
