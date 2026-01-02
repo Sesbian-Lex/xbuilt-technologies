@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import FloatingLogoModel from './FloatingLogoModel'
 
 function FloatingLogoCanvas(){
+    //set up the lighting in this file
 
 
     return(

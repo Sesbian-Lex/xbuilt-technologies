@@ -5,6 +5,7 @@ import HomeCanvas from './HomeCanvas.jsx'
 import ScrollBar from './ScrollBar.jsx'
 import NavBar  from './NavBar.jsx'
 import FloatingLogoCanvas from './FloatingLogoCanvas.jsx'
+import ServiceCarousel from './ServiceCarousel.jsx'
 
 function App() {
   const [progress, setProgress] = useState(0.25)
@@ -78,12 +79,21 @@ function App() {
           streamlined workflows, every service we provide is designed to save you time, capture more
           leads, and turn traffic into paying clients.
         </h3>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <ServiceCarousel/>
       </section>
 
       <section className='section4' id=''>
         <h2>Our Services</h2>
         
       </section>
+
         <section className='section4' id=''>
         <h2>Our Services</h2>
         

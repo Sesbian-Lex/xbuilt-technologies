@@ -1,16 +1,18 @@
 import { useRef, useEffect } from 'react'
 import './NavBar.css'
-import dota2Logo from './assets/dota2.png'
 import CTAButton from './CTAButton'
 
 function NavBar({progress}) {
+    //used the same colorProgress varaible for easier syntax
+    //progress is used to determine when navbar should disappear while animating
+    //refer to NavBar.css to change the timings
     const navRef = useRef();
     let colorProgress = 0;
     const minProg = 0.26;
     const maxProg = 0.95;
 
     useEffect(()=>{
-        console.log(progress)
+        // console.log(progress)
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
         // console.log((colorProgress*99)/100)
         navRef.current.style.setProperty('--progress', `${(colorProgress*99)/100}`)//limits it to 99% but also dividing again to 100 to return to decimal

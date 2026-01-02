@@ -10,6 +10,8 @@
     background-color: #737373;
     animation: gradientChange 1s linear paused;
     animation-delay: calc(var(--progress) * -1s);
+    pointer-events: none;
+
 }
 
 .animated-logo::before{

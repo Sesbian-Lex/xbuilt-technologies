@@ -69,32 +69,37 @@ function DisappearingTitle({progress}){
                     </div>
 
                     <div className='why-card'>
-                        <h1 style={{textAlign:'left'}} className='title-gradient'>01</h1>
+                        <h1 style={{textAlign:'left'}} className='title-gradient'>03</h1>
                         <h2>
-                        Your website looks great but it doesn’t convert.
+                            Generic Templates,
+                            Weak Brand
                         </h2>
                         <h3>
-                            You’ve invested in design, but
-                            visitors browse and leave without
-                            taking action. Instead of generating
-                            leads, your site becomes a digital
-                            brochure that doesn’t drive real
-                            business results.
+                            While templates may look
+                            professional at first glance, they
+                            often fail to reflect your unique
+                            brand identity. Visitors notice the
+                            sameness, and your business
+                            struggles to stand out in a
+                            crowded market.
                         </h3>
                     </div>
 
                     <div className='why-card'>
-                        <h1 style={{textAlign:'left'}} className='title-gradient'>01</h1>
+                        <h1 style={{textAlign:'left'}} className='title-gradient'>04</h1>
                         <h2>
-                        Your website looks great but it doesn’t convert.
+                            Your Website Isn’t
+                            Driving Growth 
                         </h2>
                         <h3>
-                            You’ve invested in design, but
-                            visitors browse and leave without
-                            taking action. Instead of generating
-                            leads, your site becomes a digital
-                            brochure that doesn’t drive real
-                            business results.
+                            Many businesses invest in a site or
+                            funnel, only to see little to no
+                            return. Without systems designed
+                            to generate leads, nurture
+                            prospects, and close sales, your
+                            website becomes just another
+                            expense instead of a growth
+                            engine.
                         </h3>
                     </div>
 

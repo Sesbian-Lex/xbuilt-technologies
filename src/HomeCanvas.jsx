@@ -22,6 +22,7 @@ function HomeCanvas({ progress, progressUpdate }){
         // console.log(progress)
         //only allow scrubbing if progress is below 0.95 and animation is not yet complete
         if(progress < 0.95) {
+            document.removeEventListener('wheel', handleWheelProgress)
             document.addEventListener('wheel', scrollScrub, config)
 
             return () => {
@@ -89,10 +90,7 @@ function HomeCanvas({ progress, progressUpdate }){
 
                     <AnimatedLogoModel progress={progress}/>
 
-
-
                 </Suspense>
-
 
             </Canvas>
 

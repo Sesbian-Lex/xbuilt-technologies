@@ -4,11 +4,12 @@ import { useEffect, useRef } from 'react'
 function FloatingLogoModel({}){
 
     const { scene, animations } = useGLTF('/FloatingAnimation.glb') //import
-    const { actions, mixer } = useAnimations(animations, scene)
+    const { actions, mixer } = useAnimations(animations, scene) //controls
 
+    //play all animations
     useEffect(() => {
         Object.values(actions).forEach(action => {
-            action.play()
+            action.play() 
             // action.paused = true
         })
     }, [actions]) 
