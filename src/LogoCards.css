@@ -1,0 +1,44 @@
+.logo-cards-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    gap: 24px;
+}
+
+.logo-cards{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    justify-content: center;
+}
+
+.logo-cards > img {
+    width: 100px;
+    aspect-ratio: 1/1;
+    border: var(--border-color);
+}
+
+.logo-cards > h3{
+    text-align: center;
+}
+
+@media (max-width: 1499px) and (min-width: 900px)  {
+  .logo-cards > img{
+    width: 64px;
+  }
+}
+
+@media (max-width: 899px){
+  .logo-cards-wrapper{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+  }
+    
+  .logo-cards > img{
+    width: 48px;
+  }
+}

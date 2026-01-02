@@ -1,0 +1,42 @@
+.animated-logo {
+    --progress: 0;
+    width: 100vw;
+    height: calc(100vh + 60px);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    inset: 0;
+    z-index: -10;
+    background-color: #737373;
+    animation: gradientChange 1s linear paused;
+    animation-delay: calc(var(--progress) * -1s);
+}
+
+.animated-logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 89%;
+    height: 100%;
+    left: 0;
+    background: linear-gradient(to right, #0c0c0c, transparent);
+}
+
+
+@keyframes gradientChange {
+  0% {background-color: #737373;}
+  25% {
+    transform: translateY(0px);
+  }
+  33%{
+    transform: translateY(-60px);
+  }
+  95%{
+    transform: translateY(-60px);
+  }
+  99%{
+    transform: translateY(0px);
+  }
+
+  100% {background-color: #3d2727;}
+}

@@ -1,0 +1,12 @@
+.cta-button{
+  background-color: var(--accent-color-2);
+  padding: 8px 54px;
+  border-radius: 20px;
+  color: color-mix(in srgb, var(--accent-color) 87%, rgb(0, 0, 0));
+  font-size: var(--body);
+  border: solid 1px var(--border-color);
+}
+.cta-button:hover{
+  background-color: color-mix(in srgb, var(--accent-color-2) 87%, black);
+  color: var(--text-color);
+}

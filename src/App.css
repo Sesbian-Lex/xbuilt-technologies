@@ -1,0 +1,152 @@
+section{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 30px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+  /* border: solid 1px wheat; */
+  position: relative;
+}
+
+.section1{
+  padding: 30px 30px 30px;
+  min-height: calc(100vh + 60px)
+}
+
+.section2{
+  min-height: 100vh;
+  width: 100vw;
+  justify-content: start;
+  background-color: #737373;
+  padding: 5%;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.section3{
+  width: 100vw;
+  justify-content: start;
+  background-color: #3d2727;
+  padding: 5%;
+  overflow: hidden;
+  z-index: -10;
+}
+
+.section2 .logo-and-text-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.section2 .logo-and-text-wrapper .floating-logo-wrapper{
+  flex: 0.7;
+}
+
+.section2 .logo-and-text-wrapper .section-2-text-wrapper{
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section2::before, .section3::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 89%;
+  height: 100%;
+  left: 0;
+  background: linear-gradient(to right, #0c0c0c, transparent);
+  z-index: -10;
+}
+
+.section4{
+  /* min-height: 0px; */
+  justify-content: center;
+  padding: 30px 0px;
+}
+
+.logo-and-text{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px 25%;
+}
+
+.logo-and-text > img{
+  width: 25%;
+  aspect-ratio: 1/1;
+  flex: 1;
+}
+
+.logo-and-text > h3{
+  text-align: center;
+  align-self: center;
+  flex: 1;
+}
+
+.sample-works{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sample-works > img{
+  width: 30%;
+}
+
+.scroll-bar{
+  display: block;
+  height: 5px;
+  background-color: var(--accent-color-2);
+  position: sticky;
+  top: 0px;
+  left: 0px;
+  width: 0vw;
+  z-index: 10;
+}
+
+
+@media (max-width: 1499px) and (min-width: 900px){
+  .section1{
+    padding: 30px 30px 30px;
+  }
+
+}
+
+@media (max-width: 899px){
+  .section1{
+    padding: 15px 15px 15px;
+  } 
+
+}
+
+.title-gradient {
+  background: linear-gradient(
+    360deg,
+    #00353c 0%,
+    #00aec1 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.section3 h2, .section3 h3 {
+  text-align: center;
+  padding: 0% 21%;
+}
+
+.section3 h3{
+  color: var(--gray-text-color);
+}
+
