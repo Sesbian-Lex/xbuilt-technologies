@@ -68,9 +68,7 @@ section{
 }
 
 .section4{
-  /* min-height: 0px; */
-  justify-content: center;
-  padding: 30px 0px;
+  padding: 0px;
 }
 
 .logo-and-text{
@@ -125,6 +123,7 @@ section{
   .section1{
     padding: 15px 15px 15px;
   } 
+
 
 }
 

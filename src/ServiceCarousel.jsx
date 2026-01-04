@@ -8,7 +8,7 @@ import WebDesign from './assets/web-design.png'
 import VidEdit from './assets/vid-edit.png'
 
 function ServiceCarousel(){
-    const [offset, setOffset] = useState(0);
+    const [offset, setOffset] = useState(2);
     const carouselRef = useRef();
     const leftArrow = useRef();
     const rightArrow = useRef();
@@ -20,6 +20,14 @@ function ServiceCarousel(){
         leftArrowHandle();
         rightArrowHandle();
     },[])
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        setOffset(prev => prev - 1);
+        }, 5000);
+
+        return () => clearInterval(intervalId); // cleanup
+    }, []);
 
     //arrow handles to change the offset
     function leftArrowHandle() {

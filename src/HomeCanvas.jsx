@@ -37,11 +37,11 @@ function HomeCanvas({ progress, progressUpdate }){
 
     const handleWheelProgress = useCallback(()=>{
                 const currentScroll = window.scrollY;
-                console.log("currrent scroll: ", currentScroll)
+                // console.log("currrent scroll: ", currentScroll)
                 // console.log(progress)
-                console.log(currentScroll < 20 ? '1T' : '1F', progress > 0.94 ? '2T' : '2F')
+                // console.log(currentScroll < 20 ? '1T' : '1F', progress > 0.94 ? '2T' : '2F')
                 if(currentScroll < 20 && progress > 0.94){
-                    console.log(progress)
+                    // console.log(progress)
                     progressUpdate(0.94);
                     document.removeEventListener('wheel', handleWheelProgress)
                 }

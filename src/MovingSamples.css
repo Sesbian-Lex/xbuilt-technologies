@@ -1,0 +1,165 @@
+.moving-samples-wrapper{
+    --progress2: 0;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #737373;
+    animation: gradientChange 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+    padding: 30px;
+}
+
+.moving-samples-wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 89%;
+    height: 100%;
+    left: 0;
+    background: linear-gradient(to right, #0c0c0c, transparent);
+    z-index: -1;
+}
+
+@keyframes gradientChange {
+  0% {background-color: #737373;}
+  25% {
+    transform: translateY(0px);
+  }
+  33%{
+    transform: translateY(-60px);
+  }
+  95%{
+    transform: translateY(-60px);
+  }
+  99%{
+    transform: translateY(0px);
+  }
+
+  100% {background-color: #3d2727;}
+}
+
+
+.moving-sample-card{
+    width: 13%;
+    aspect-ratio: 4/5;
+    position: absolute;
+    animation: MovingSamplesWidthAnimation 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+}
+
+.moving-sample-card img {
+    width: 100%;
+}
+
+.moving-samples-wrapper > h2 {
+    position: absolute;
+    width: 33%;
+    top: 35%;
+    left: 10%;
+    /* display: none; */
+    animation: TextDisappear 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+}
+
+
+#homirx{
+    position: absolute;
+    /* top: 0;
+    left: 50%; */
+
+}
+
+.moving-sample-card h2, .moving-sample-card h3 {
+    animation: MovingSamplesAnimation 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+}
+
+@keyframes MovingSamplesWidthAnimation {
+    0% {
+        width: 13%;
+
+    }
+
+    50% {
+        width: 13%;
+
+    }
+
+    100% {
+        width: 18%;
+    }
+}
+
+@keyframes MovingSamplesAnimation {
+    0% {
+        opacity: 0;
+
+    }
+
+    50% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes TextDisappear {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+/* @keyframes homirxMovement {
+    0%{
+        left: 75%;
+    }
+
+    50% {
+        left: 75%;
+    }
+
+    100% {
+        left: 25%;
+    }
+
+} */
+
+#alexi{
+    z-index: 5;
+}
+
+#sultin{
+    z-index: 4;
+}
+
+#timothy {
+    z-index: 3;
+}
+
+#homirx {
+    z-index: 2;
+    /* animation: homirxMovement 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s); */
+}
+
+.torn-paper{
+    position: absolute;
+    width: 40%;
+    z-index: 1;
+    left: 52.5%;
+    top: 30%;
+    animation: TextDisappear 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+}

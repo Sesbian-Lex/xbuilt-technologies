@@ -16,9 +16,11 @@ import WebDesign from './assets/web-design.png'
 import WebDesignIcon from './assets/web-design-icon.png'
 import VidEdit from './assets/vid-edit.png'
 import VidEditIcon from './assets/vid-edit-icon.png'
+import MovingSamples from './MovingSamples.jsx'
 
 function App() {
   const [progress, setProgress] = useState(0.25)
+  const [progress2, setProgress2] = useState(0)
 
   return (
     <>
@@ -187,7 +189,8 @@ function App() {
       </section>
 
       <section className='section4' id=''>
-        <h2>Our Services</h2>
+        <MovingSamples/>
+       
         
       </section>
 
