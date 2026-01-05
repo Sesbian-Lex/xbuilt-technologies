@@ -17,6 +17,7 @@ import WebDesignIcon from './assets/web-design-icon.png'
 import VidEdit from './assets/vid-edit.png'
 import VidEditIcon from './assets/vid-edit-icon.png'
 import MovingSamples from './MovingSamples.jsx'
+import AccordionFaq from './AccordionFaq.jsx'
 import TempProfile from './assets/temp-profile-pic.webp'
 
 function App() {
@@ -256,7 +257,10 @@ function App() {
         <h2>Frequently Asked Questions</h2>
         <h3>Get answers to common questions about working with me.</h3>
 
-        <h3>*put accordion style faq here later*</h3>
+        <br/> 
+
+        <AccordionFaq/>
+
         
       </section>
     </>
