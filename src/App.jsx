@@ -17,10 +17,10 @@ import WebDesignIcon from './assets/web-design-icon.png'
 import VidEdit from './assets/vid-edit.png'
 import VidEditIcon from './assets/vid-edit-icon.png'
 import MovingSamples from './MovingSamples.jsx'
+import TempProfile from './assets/temp-profile-pic.webp'
 
 function App() {
   const [progress, setProgress] = useState(0.25)
-  const [progress2, setProgress2] = useState(0)
 
   return (
     <>
@@ -188,14 +188,75 @@ function App() {
 
       </section>
 
-      <section className='section4' id=''>
+      <section className='section4' id='designPortfolio'>
         <MovingSamples/>
        
         
       </section>
 
-        <section className='section4' id=''>
-        <h2>Our Services</h2>
+      <section className='section5' id='testimonals'>
+        <h1 className='title-gradient title-size'>TESTIMONALS</h1>
+        <div className='testimonal-cards-wrapper'> 
+          <div className='testimonal-card'>
+            <img src={TempProfile}/>
+            <br/>
+            <h3>
+              “XBuilt Technology
+                delivered exactly what I needed a
+                clean, high-converting funnel that
+                actually works. The structure, flow,
+                and automation made the entire
+                process seamless and effective.”
+            </h3>
+            <br/>
+            <h3>
+              - Timothy Roberts 
+            </h3>
+          </div>
+
+          <div className='testimonal-card'>
+            <img src={TempProfile}/>
+            <br/>
+            <h3>
+              “From design to execution,
+              everything was handled smoothly.
+              The landing page perfectly
+              represents our brand and has helped
+              us create a stronger online
+              presence.”
+            </h3>
+            <br/>
+            <h3>
+              - Alexi 
+            </h3>
+          </div>
+
+          <div className='testimonal-card'>
+            <img src={TempProfile}/>
+            <br/>
+            <h3>
+              “They transformed our landing page
+              into something professional,
+              modern, and easy for clients to
+              navigate. The attention to detail and
+              focus on user experience really set
+              them apart.”
+            </h3>
+            <br/>
+            <h3>
+              - Homirx
+            </h3>
+          </div>
+        </div>
+
+      </section>
+
+      <section className='section6' id='faqs'>
+        <h1 className='title-gradient title-size'>FAQS</h1>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Get answers to common questions about working with me.</h3>
+
+        <h3>*put accordion style faq here later*</h3>
         
       </section>
     </>

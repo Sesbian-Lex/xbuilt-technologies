@@ -9,7 +9,7 @@
     left: 0px;
     /* height: 48px; */
     /* background-color: color-mix(in srgb, var(--background-color) 95%, white); */
-    background-color: var(--background-color);
+    background-color: #0c0c0c;
     padding-top: 5px;
     padding-bottom: 5px;
     z-index: 10;

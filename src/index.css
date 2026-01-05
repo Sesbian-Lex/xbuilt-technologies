@@ -14,14 +14,15 @@ html {
 
 :root {
   /* Colors */
-  --background-color: #0c0c0c;
+  --background-color-gray: #737373;
+  --background-color-red: #3d2727;
   --text-color: #edf0f3;
   --accent-color: #00b5da;
   --accent-color-2: #34d8d8;
   --borders: #223146;
   --gray-text-color: #caccce;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: #0c0c0c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

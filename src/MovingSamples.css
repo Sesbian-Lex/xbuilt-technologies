@@ -21,7 +21,7 @@
 }
 
 @keyframes gradientChange {
-  0% {background-color: #737373;}
+  0% {background-color: var(--background-color-gray);}
   25% {
     transform: translateY(0px);
   }
@@ -35,7 +35,7 @@
     transform: translateY(0px);
   }
 
-  100% {background-color: #3d2727;}
+  100% {background-color: var(--background-color-red);}
 }
 
 

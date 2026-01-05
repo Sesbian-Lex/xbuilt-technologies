@@ -31,7 +31,7 @@ function NavBar({progress}) {
                 <a href='#home'>HOME</a>
                 <a href='#aboutUs'>ABOUT US</a>
                 <a href='#ourServices'>SERVICES</a>
-                <a href='#home'>PORTFOLIO</a>
+                <a href='#designPortfolio'>PORTFOLIO</a>
             </div>
 
             <div className='cta-wrapper nav-column'>
