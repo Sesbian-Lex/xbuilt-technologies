@@ -128,11 +128,27 @@
 .why-card{
   display: flex;
   flex-direction: column;
-  width: 18%;
-  aspect-ratio: 1 / 1.4;
+  width: 18vw;
+  /* aspect-ratio: 1 / 1.4; */
   background-color: #b3b3b3;
   padding: 21px 13px;
   border-radius: 21px;
+  /* opacity: 0; */
+}
+
+.why-card-wrapper-squared{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 19vw;
+  /* aspect-ratio: 1 / 1.4;  */
+  /* background-color: #ff4141; */
+  background-image: url("/1483.jpg");
+  padding: 0.5vw;
+  border-radius: calc(21px + 0.5vw);
+  background-size: 600px;
 }
 
 .why-card h1 {

@@ -25,12 +25,12 @@ function ServiceCarouselCard({offset, img, parentWidth, destination}){
         carouselCardWrapper.current.style.left = `${(parentWidth.current/5) * offset}px`
         //middlemost offset being more noticable
         if (offset == 2){
-             carouselCardWrapper.current.style.transform = 'scale(1.3)';
+             carouselCardWrapper.current.style.transform = 'scale(1.15)';
              carouselCardWrapper.current.style.zIndex = '3';
              carouselCardWrapper.current.style.opacity = '1';
         }
         else if (offset == 1 || offset == 3){
-             carouselCardWrapper.current.style.transform = 'scale(1.15)';
+             carouselCardWrapper.current.style.transform = 'scale(1.075)';
              carouselCardWrapper.current.style.zIndex = '2';
              carouselCardWrapper.current.style.opacity = '0.9';
         }

@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react'
 
 function AnimatedLogoModel({progress}){
 
-    const { scene, animations } = useGLTF('/AnimatedLogo.glb') //import
+    // const { scene, animations } = useGLTF('/AnimatedLogo.glb') //import
+    const { scene, animations } = useGLTF('/twoEightEight.glb')
     const { actions, mixer } = useAnimations(animations, scene) //controlling blender animations
     const count = useRef(0);
 
@@ -21,14 +22,14 @@ function AnimatedLogoModel({progress}){
         if (!mixer) return//stop if mixer is not yet loaded
 
         //plays initial animation up to 34 frames
-        if (count.current < 35){
+        if (count.current < 72){
                 //current frame devided max frame to get percentage, multiply by 6 seconds
-                mixer.setTime((count.current/144)*6)
+                mixer.setTime((count.current/288)*12)
                 count.current++;
             }
         //else statement for scrubbing after the initial animation
         else {
-            mixer.setTime(progress*6)
+            mixer.setTime(progress*12)
             // console.log(progress*6)  
         }
     })

@@ -13,6 +13,9 @@ function ServiceCarousel(){
     const leftArrow = useRef();
     const rightArrow = useRef();
     const carouselWidth = useRef(0);
+    const autoSlideRef = useRef(null);
+
+    
     
     useEffect(()=>{
         carouselWidth.current = carouselRef.current.getBoundingClientRect().width
@@ -22,21 +25,33 @@ function ServiceCarousel(){
     },[])
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-        setOffset(prev => prev - 1);
-        }, 5000);
+        startAutoSlide();
 
-        return () => clearInterval(intervalId); // cleanup
+        return () => {
+            clearInterval(autoSlideRef.current);
+        };
     }, []);
 
     //arrow handles to change the offset
     function leftArrowHandle() {
-        setOffset(prev => prev - 1); 
+        setOffset(prev => prev + 1);
+        startAutoSlide();
     }
 
     function rightArrowHandle() {
-        setOffset(prev => prev + 1);
+        setOffset(prev => prev - 1);
+        startAutoSlide();
     }
+
+    function startAutoSlide() {
+    if (autoSlideRef.current) {
+        clearInterval(autoSlideRef.current);
+    }
+
+    autoSlideRef.current = setInterval(() => {
+        setOffset(prev => prev - 1);
+    }, 5000);
+}
 
 
     return(
