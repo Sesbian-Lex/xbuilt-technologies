@@ -19,6 +19,8 @@ import VidEditIcon from './assets/vid-edit-icon.png'
 import MovingSamples from './MovingSamples.jsx'
 import AccordionFaq from './AccordionFaq.jsx'
 import TempProfile from './assets/temp-profile-pic.webp'
+import ClosingImg from './assets/closing-image.png'
+import CTAButton from './CTAButton.jsx'
 
 function App() {
   const [progress, setProgress] = useState(0.25)
@@ -265,6 +267,26 @@ function App() {
 
         
       </section>
+
+      <section className='section7' id='closing-section'>
+        <div className='floating-logo-wrapper-2'>
+          <FloatingLogoCanvas/>
+        </div>
+
+        <img src={ClosingImg} className='closing-img'/>
+
+        <div className='section7-text-wrapper'>
+          <h1>Ready to Build a Site That Actually Works?</h1>
+          <h3>
+            We don't chase trends. We build a reliable digital systems that power your sales process, strengthen your brand, and deliver consisten, high-quality results
+          </h3>
+          <br/>
+          <CTAButton text="BOOK A FREE DISCOVERY CALL"/>
+        </div>
+
+
+        
+      </section>      
     </>
   )
 }

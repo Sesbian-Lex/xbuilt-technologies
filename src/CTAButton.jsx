@@ -1,10 +1,10 @@
 import './CTAButton.css'
 
-function CTAButton(){
+function CTAButton({ text = "BOOK A CALL" }){
 
     return(
 
-            <button className='cta-button'>BOOK A CALL</button> 
+            <button className='cta-button'>{text}</button> 
 
         
     )

@@ -8,6 +8,7 @@
   border: solid 1px var(--border-color);
   background-image: linear-gradient(to right, #7990a0, #2f394f);
   color: rgba(240, 248, 255, 0.85);
+  transition: all 0.5s ease-out;
 }
 .cta-button:hover{
   background-image: linear-gradient(to right, #586a77, #252c3d);
