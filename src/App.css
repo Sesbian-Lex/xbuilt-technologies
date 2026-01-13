@@ -128,16 +128,6 @@ section{
 
 }
 
-.title-gradient {
-  background: linear-gradient(
-    360deg,
-    #00353c 0%,
-    #00aec1 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
 .section3 {
   display: flex;

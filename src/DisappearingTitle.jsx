@@ -13,7 +13,7 @@ function DisappearingTitle({progress}){
         // console.log(progress)
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
         if (colorProgress > 0.98) colorProgress = 0.98;
-        console.log((colorProgress*99)/100)
+        // console.log((colorProgress*99)/100)
         titleWrapper.current.style.setProperty('--progress', `${(colorProgress*99)/100}`)
         titleWrapper2.current.style.setProperty('--progress', `${(colorProgress*99)/100}`)
 

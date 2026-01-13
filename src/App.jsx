@@ -23,6 +23,8 @@ import TempProfile from './assets/temp-profile-pic.webp'
 function App() {
   const [progress, setProgress] = useState(0.25)
 
+  useEffect(()=>{console.log(progress)},[progress])
+
   return (
     <>
       <ScrollBar/>

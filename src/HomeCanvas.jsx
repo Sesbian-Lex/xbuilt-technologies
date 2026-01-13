@@ -16,6 +16,7 @@ function HomeCanvas({ progress, progressUpdate }){
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     useEffect(() => {
+        console.log(progress)
         if(window.scrollY > 100) {
             progressUpdate(0.955);
             document.addEventListener('wheel', handleWheelProgress)
@@ -71,7 +72,7 @@ function HomeCanvas({ progress, progressUpdate }){
             // 0.255, minimum scrubbing, don't scrub less than that to avoid
             //// initial animation 
             if(e.deltaY > 0){
-                if(progress + (0.005*9)> 0.98) {
+                if(progress + (0.005*4)> 0.96) {
                     scrubbing.current = false
                     // document.removeEventListener('wheel', scrollScrub);
 
@@ -126,9 +127,7 @@ function HomeCanvas({ progress, progressUpdate }){
                     scrubbing.current = false
 
                 }
-            } else {
-                window.scrollY += 100;
-            }
+            } 
         }
     )
 

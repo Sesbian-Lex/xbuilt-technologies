@@ -40,5 +40,7 @@
     transform: translateY(0px);
   }
 
-  100% {background-color: var(--background-color-red);}
+  100% {
+    background-color: var(--background-color-red);
+  }
 }

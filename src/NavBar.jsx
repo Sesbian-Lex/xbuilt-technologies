@@ -23,7 +23,7 @@ function NavBar({progress}) {
     return(
         <nav className='nav-bar' ref={navRef}>
             <div className='logo-wrapper nav-column'>
-                <h2>XBUILT Technologies</h2>
+                <h2 className='old-font'>XBUILT Technologies</h2>
                 {/* <img src={dota2Logo}></img> */}
             </div>
 

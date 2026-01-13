@@ -8,15 +8,15 @@ function LogoCards(){
     return(<div className='logo-cards-wrapper'>
         <div className='logo-cards'>
             <img src={figma}/>
-            <h3>Figma</h3>
+            {/* <h3>Figma</h3> */}
         </div>
         <div className='logo-cards'>
             <img src={ghl}/>
-            <h3>GoHighLevel</h3>
+            {/* <h3>GoHighLevel</h3> */}
         </div>
         <div className='logo-cards'>
             <img src={kajabi}/>
-            <h3>Kajabi</h3>
+            {/* <h3>Kajabi</h3> */}
         </div>
         
         

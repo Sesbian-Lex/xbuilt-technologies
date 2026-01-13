@@ -50,7 +50,7 @@ function ServiceCarousel(){
 
     autoSlideRef.current = setInterval(() => {
         setOffset(prev => prev - 1);
-    }, 5000);
+    }, 3000);
 }
 
 

@@ -1,12 +1,25 @@
 .cta-button{
-  background-color: var(--accent-color-2);
+  /* background-color: var(--accent-color-2); */
   padding: 8px 54px;
   border-radius: 20px;
-  color: color-mix(in srgb, var(--accent-color) 87%, rgb(0, 0, 0));
-  font-size: var(--body);
+  /* color: color-mix(in srgb, var(--accent-color) 87%, rgb(0, 0, 0)); */
+  font-size: calc(var(--h2)*0.80);
+  font-weight: 525;
   border: solid 1px var(--border-color);
+  background-image: linear-gradient(to right, #7990a0, #2f394f);
+  color: rgba(240, 248, 255, 0.85);
 }
 .cta-button:hover{
-  background-color: color-mix(in srgb, var(--accent-color-2) 87%, black);
+  background-image: linear-gradient(to right, #586a77, #252c3d);
   color: var(--text-color);
+  color: aliceblue;
+}
+
+/* .cta-button-wrapper{
+    background: linear-gradient(to right, #0c0c0c, transparent);
+    z-index: 1;
+} */
+
+.cta-button::before{
+    background: linear-gradient(to right, #0c0c0c, transparent);
 }

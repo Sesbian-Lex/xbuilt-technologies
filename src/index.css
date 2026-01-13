@@ -30,8 +30,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   
   /*fonts*/
-  --font-header: 'DM Sans', sans-serif;
-  --font-body: 'Source Sans Pro', sans-serif;
+  --font-header: 'Work Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
   /*golden ration*/
   --phi: 1.61803398875;
   /*spacing*/
@@ -75,6 +75,7 @@ h1{
   margin-bottom: var(--space-base);
   color: var(--text-color);
   text-align: center;
+  font-weight: 600;
 }
 
 h2{
@@ -90,6 +91,17 @@ h3{
   /* background-color: rgba(0, 128, 0, 0.39); */
   font-size: var(--body);
   margin-bottom: var(--space--tight);
+}
+
+.title-gradient {
+  background: linear-gradient(
+    360deg,
+    #00353c 0%,
+    #00a9bd 75%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 
