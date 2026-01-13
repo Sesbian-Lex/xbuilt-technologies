@@ -262,7 +262,7 @@ section{
   align-content: center;
 }
 
-.section7-text-wrapper h1, h3 {
+.section7-text-wrapper h1, .section7-text-wrapper h3 {
   text-align: center;
   text-shadow: 4px 4px 16px rgb(0, 0, 0);
 
