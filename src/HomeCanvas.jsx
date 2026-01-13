@@ -16,7 +16,6 @@ function HomeCanvas({ progress, progressUpdate }){
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     useEffect(() => {
-        console.log(progress)
         if(window.scrollY > 100) {
             progressUpdate(0.955);
             document.addEventListener('wheel', handleWheelProgress)
@@ -52,10 +51,11 @@ function HomeCanvas({ progress, progressUpdate }){
     })
 
     useEffect(()=>{
-        // console.log(progress)
+        console.log(progress)
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
-        // console.log((colorProgress*99)/100)
-        canvas.current.style.setProperty('--progress', `${(colorProgress*99)/100}`)//limits it to 99% but also dividing again to 100 to return to decimal
+        if(colorProgress > 0.99) colorProgress = 0.99;
+        console.log('colorProgress',(colorProgress))
+        canvas.current.style.setProperty('--progress', `${(colorProgress)}`)//limits it to 99% but also dividing again to 100 to return to decimal
 
 
     }, [progress])

@@ -40,6 +40,10 @@
     transform: translateY(0px);
   }
 
+  95% {
+    background-color: var(--background-color-red);
+  }
+
   100% {
     background-color: var(--background-color-red);
   }
