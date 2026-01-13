@@ -8,7 +8,7 @@ import WebDesign from './assets/web-design.png'
 import VidEdit from './assets/vid-edit.png'
 
 function ServiceCarousel(){
-    const [offset, setOffset] = useState(2);
+    const [offset, setOffset] = useState(0);
     const carouselRef = useRef();
     const leftArrow = useRef();
     const rightArrow = useRef();
@@ -19,9 +19,6 @@ function ServiceCarousel(){
     
     useEffect(()=>{
         carouselWidth.current = carouselRef.current.getBoundingClientRect().width
-        console.log(carouselWidth.current)
-        leftArrowHandle();
-        rightArrowHandle();
     },[])
 
     useEffect(() => {
@@ -57,11 +54,15 @@ function ServiceCarousel(){
     return(
         <div className='service-carousel' ref={carouselRef}>
             <div className='left-arrow' ref={leftArrow} onClick={leftArrowHandle}>🠼</div>
+
             <ServiceCarouselCard img={LandingPageImg} offset={offset + 0} parentWidth={carouselWidth} destination={'#landingPage'}/>
             <ServiceCarouselCard img={FunnelDesign} offset={offset + 1} parentWidth={carouselWidth} destination={'#funnelDesign'}/>
             <ServiceCarouselCard img={CRMPipe} offset={offset + 2} parentWidth={carouselWidth} destination={'#crmPipe'}/>
             <ServiceCarouselCard img={WebDesign} offset={offset + 3} parentWidth={carouselWidth} destination={'#webDesign'} />
             <ServiceCarouselCard img={VidEdit} offset={offset + 4} parentWidth={carouselWidth} destination={'#vidEdit'}/>
+            <ServiceCarouselCard img={LandingPageImg} offset={offset + 5} parentWidth={carouselWidth} destination={'#landingPage'}/>
+            <ServiceCarouselCard img={FunnelDesign} offset={offset + 6} parentWidth={carouselWidth} destination={'#funnelDesign'}/>
+            
             <div className='right-arrow' ref={rightArrow} onClick={rightArrowHandle}>🠾</div>
         </div>
     )

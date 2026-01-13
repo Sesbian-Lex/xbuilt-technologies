@@ -13,12 +13,14 @@ function ServiceCarouselCard({offset, img, parentWidth, destination}){
         // console.log(offset)
         // positive offset 
         //else for negative offset
-        if(offset > 4){
-            offset %= 5;
+        if(offset > 6){
+            offset %= 7;
         } else if(offset<0){ 
-            offset = ((offset%5)+5)%5;
+            offset = ((offset%7)+7)%7;
             // console.log("negative: ", offset%5)
         }
+
+        // console.log("cardOffset:", offset)
         //get the width of the object
         const width = carouselCardWrapper.current.getBoundingClientRect().width;
         //move the object to position depending on the parent and current offset
@@ -38,6 +40,16 @@ function ServiceCarouselCard({offset, img, parentWidth, destination}){
              carouselCardWrapper.current.style.transform = 'scale(1)';
              carouselCardWrapper.current.style.zIndex = '1';
              carouselCardWrapper.current.style.opacity = '0.75';
+        } 
+        else if (offset == 5){
+             carouselCardWrapper.current.style.transform = 'scale(0.95)';
+             carouselCardWrapper.current.style.zIndex = '-1';
+             carouselCardWrapper.current.style.opacity = '0';
+        } else if (offset == 6){
+             carouselCardWrapper.current.style.transform = 'scale(0.95)';
+             carouselCardWrapper.current.style.zIndex = '-1';
+             carouselCardWrapper.current.style.opacity = '0';
+             carouselCardWrapper.current.style.left = `${-(parentWidth.current/5)}px`
         }
 
     },[offset])

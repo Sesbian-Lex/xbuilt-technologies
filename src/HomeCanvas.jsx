@@ -51,10 +51,10 @@ function HomeCanvas({ progress, progressUpdate }){
     })
 
     useEffect(()=>{
-        console.log(progress)
+        // console.log(progress)
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
         if(colorProgress > 0.99) colorProgress = 0.99;
-        console.log('colorProgress',(colorProgress))
+        // console.log('colorProgress',(colorProgress))
         canvas.current.style.setProperty('--progress', `${(colorProgress)}`)//limits it to 99% but also dividing again to 100 to return to decimal
 
 
@@ -62,7 +62,7 @@ function HomeCanvas({ progress, progressUpdate }){
 
     const scrollScrub = useCallback(async (e) => {
             e.preventDefault();
-            console.log(scrubbing.current)
+            // console.log(scrubbing.current)
             if(scrubbing.current) return;
 
             scrubbing.current = true
