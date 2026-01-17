@@ -63,16 +63,20 @@ function HomeCanvas({ progress, progressUpdate }){
     const scrollScrub = useCallback(async (e) => {
             e.preventDefault();
             // console.log(scrubbing.current)
+            console.log(scrubbing.current)
             if(scrubbing.current) return;
 
             scrubbing.current = true
+            
 
             // if scroll is positive or negative
             // 0.015 is the animation scrub amount, increase for faster scrubbing
             // 0.255, minimum scrubbing, don't scrub less than that to avoid
             //// initial animation 
             if(e.deltaY > 0){
-                if(progress + (0.005*4)> 0.96) {
+
+                //if(progress + (0.005*4)> 0.96)
+                if(progress > 0.95) {
                     scrubbing.current = false
                     // document.removeEventListener('wheel', scrollScrub);
 
@@ -80,6 +84,24 @@ function HomeCanvas({ progress, progressUpdate }){
                 }
 
                 e.preventDefault();
+
+                // progressUpdate((prev)=> prev + 35)
+
+                // if(progress < 61 ){
+                //     while(progress < 61){
+                //         progressUpdate((prev)=> prev + 0.005)
+                //         await delay(12)
+                //     }
+                // } 
+                // else {
+                //     while(progress < 96){
+                //         progressUpdate((prev)=> prev + 0.005)
+                //         await delay(12)
+                //     }
+                // }
+                    
+
+                
 
                 progressUpdate((prev)=> prev + 0.005)
                 await delay(12)

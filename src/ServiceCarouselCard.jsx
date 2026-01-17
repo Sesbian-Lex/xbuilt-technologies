@@ -24,29 +24,35 @@ function ServiceCarouselCard({offset, img, parentWidth, destination}){
         //get the width of the object
         const width = carouselCardWrapper.current.getBoundingClientRect().width;
         //move the object to position depending on the parent and current offset
-        carouselCardWrapper.current.style.left = `${(parentWidth.current/5) * offset}px`
+        carouselCardWrapper.current.style.left = `${((parentWidth.current)/5) * offset}px`
         //middlemost offset being more noticable
         if (offset == 2){
-             carouselCardWrapper.current.style.transform = 'scale(1.15)';
+             carouselCardWrapper.current.style.transform = 'scale(1)';
              carouselCardWrapper.current.style.zIndex = '3';
              carouselCardWrapper.current.style.opacity = '1';
         }
         else if (offset == 1 || offset == 3){
-             carouselCardWrapper.current.style.transform = 'scale(1.075)';
+             carouselCardWrapper.current.style.transform = 'scale(0.95)';
              carouselCardWrapper.current.style.zIndex = '2';
              carouselCardWrapper.current.style.opacity = '0.9';
         }
         else if (offset == 0 || offset == 4){
-             carouselCardWrapper.current.style.transform = 'scale(1)';
+             carouselCardWrapper.current.style.transform = 'scale(0.85)';
              carouselCardWrapper.current.style.zIndex = '1';
              carouselCardWrapper.current.style.opacity = '0.75';
+
+             if (offset == 0){
+                carouselCardWrapper.current.style.left = `${(parentWidth.current*0.015 )}px`
+             } else if (offset == 4){
+                carouselCardWrapper.current.style.left = `${(parentWidth.current) - (parentWidth.current*0.015) - (parentWidth.current/5)}px`
+             }
         } 
         else if (offset == 5){
-             carouselCardWrapper.current.style.transform = 'scale(0.95)';
+             carouselCardWrapper.current.style.transform = 'scale(0.75)';
              carouselCardWrapper.current.style.zIndex = '-1';
              carouselCardWrapper.current.style.opacity = '0';
         } else if (offset == 6){
-             carouselCardWrapper.current.style.transform = 'scale(0.95)';
+             carouselCardWrapper.current.style.transform = 'scale(0.75)';
              carouselCardWrapper.current.style.zIndex = '-1';
              carouselCardWrapper.current.style.opacity = '0';
              carouselCardWrapper.current.style.left = `${-(parentWidth.current/5)}px`
