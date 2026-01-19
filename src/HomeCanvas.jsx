@@ -72,7 +72,7 @@ function HomeCanvas({ progress, progressUpdate }){
             // 0.255, minimum scrubbing, don't scrub less than that to avoid
             //// initial animation 
             if(e.deltaY > 0){
-                if(progress + (0.005*4)> 0.96) {
+                if(progress + (0.02)> 0.96) {
                     scrubbing.current = false
                     // document.removeEventListener('wheel', scrollScrub);
 
