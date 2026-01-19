@@ -10,7 +10,7 @@ function HomeCanvas({ progress, progressUpdate }){
     const config = {passive : false}
     let colorProgress = 0;
     const minProg = 0.26;
-    const maxProg = 0.95;
+    const maxProg = 0.96;
     const scrubbing = useRef(false)
 
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -24,7 +24,8 @@ function HomeCanvas({ progress, progressUpdate }){
         }
         // console.log(progress)
         //only allow scrubbing if progress is below 0.95 and animation is not yet complete
-        if(progress < 0.95) {
+        if(progress < 0.96) {
+            console.log("less than 0.96")
             document.addEventListener('wheel', scrollScrub, config)
 
             return () => {
@@ -43,7 +44,7 @@ function HomeCanvas({ progress, progressUpdate }){
                 // console.log("currrent scroll: ", currentScroll)
                 // console.log(progress)
                 // console.log(currentScroll < 20 ? '1T' : '1F', progress > 0.94 ? '2T' : '2F')
-                if(currentScroll < 20 && progress > 0.94){
+                if(currentScroll < 20 && progress > 0.95){
                     // console.log(progress)
                     progressUpdate(0.94);
                     document.removeEventListener('wheel', handleWheelProgress)
@@ -61,10 +62,11 @@ function HomeCanvas({ progress, progressUpdate }){
     }, [progress])
 
     const scrollScrub = useCallback(async (e) => {
-            e.preventDefault();
+            
             // console.log(scrubbing.current)
             if(scrubbing.current) return;
 
+            e.preventDefault();
             scrubbing.current = true
 
             // if scroll is positive or negative
@@ -72,16 +74,10 @@ function HomeCanvas({ progress, progressUpdate }){
             // 0.255, minimum scrubbing, don't scrub less than that to avoid
             //// initial animation 
             if(e.deltaY > 0){
-                if(progress + (0.02)> 0.96) {
-                    scrubbing.current = false
-                    // document.removeEventListener('wheel', scrollScrub);
-
-                    return
-                }
 
                 e.preventDefault();
 
-                progressUpdate((prev)=> prev + 0.02)
+                progressUpdate((prev)=> prev + 0.0225)
                 scrubbing.current = false
 
             } else if(e.deltaY < 0){
@@ -91,7 +87,7 @@ function HomeCanvas({ progress, progressUpdate }){
                     return
                 } else {
 
-                    progressUpdate((prev)=> prev - 0.02)
+                    progressUpdate((prev)=> prev - 0.0225)
                     scrubbing.current = false
 
 
