@@ -23,7 +23,7 @@ import ClosingImg from './assets/closing-image.png'
 import CTAButton from './CTAButton.jsx'
 
 function App() {
-  const [progress, setProgress] = useState(0.25)
+  const [progress, setProgress] = useState(0.26)
 
   useEffect(()=>{console.log(progress)},[progress])
 

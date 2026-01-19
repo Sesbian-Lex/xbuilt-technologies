@@ -1,37 +1,49 @@
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useEffect, useRef } from 'react'
+import * as THREE from 'three'
 
-function AnimatedLogoModel({progress}){
-
-    // const { scene, animations } = useGLTF('/AnimatedLogo.glb') //import
+function AnimatedLogoModel({ progress }) {
     const { scene, animations } = useGLTF('/twoEightEight.glb')
-    const { actions, mixer } = useAnimations(animations, scene) //controlling blender animations
-    const count = useRef(0);
+    const { actions, mixer } = useAnimations(animations, scene)
 
-    //loading the animations
+    const count = useRef(0)
+    const currentTime = useRef(0)
+
+    const DURATION = 12 // seconds
+    const INITIAL_FRAMES = 72
+    const TOTAL_FRAMES = 288
+
     useEffect(() => {
         Object.values(actions).forEach(action => {
             action.play()
-            // action.paused = true
+            // action.paused = true // IMPORTANT
         })
-    }, [actions]) 
+    }, [actions])
 
-    //controlling
-    useFrame(() => {
-        if (!mixer) return//stop if mixer is not yet loaded
+    useFrame((_, delta) => {
+        if (!mixer) return
 
-        //plays initial animation up to 34 frames
-        if (count.current < 72){
-                //current frame devided max frame to get percentage, multiply by 6 seconds
-                mixer.setTime((count.current/288)*12)
-                count.current++;
-            }
-        //else statement for scrubbing after the initial animation
-        else {
-            mixer.setTime(progress*12)
-            // console.log(progress*6)  
+        // Initial intro animation (frame-based)
+        if (count.current < INITIAL_FRAMES) {
+            currentTime.current = (count.current / TOTAL_FRAMES) * DURATION
+            mixer.setTime(currentTime.current)
+            count.current++
+            return
         }
+
+        // Target time from progress
+        const targetTime = THREE.MathUtils.clamp(progress, 0, 1) * DURATION
+
+        // Smoothly move toward target
+        currentTime.current = THREE.MathUtils.damp(
+            currentTime.current,
+            targetTime,
+            6,       // responsiveness (higher = snappier)
+            delta
+        )
+
+        mixer.setTime(currentTime.current)
     })
 
     return <primitive object={scene} position={[0, -2.5, 0]} />
