@@ -48,7 +48,7 @@ function App() {
             <FloatingLogoCanvas/>
           </div>
           <div className='section-2-text-wrapper'>
-            <h2 style={{textAlign:'center'}}>XBuilt Technology</h2>
+            <h2 style={{textAlign:'center'}}>XBuilt Technologies</h2>
 
             <h3 style={{ color: "var(--gray-text-color)" }}>
               We transform service based businesses into client generating machines

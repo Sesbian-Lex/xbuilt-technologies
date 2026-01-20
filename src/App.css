@@ -21,7 +21,7 @@ section{
   width: 100vw;
   justify-content: start;
   background-color: var(--background-color-gray);
-  padding: 5%;
+  padding: 5% 13%;
   overflow: hidden;
   z-index: 1;
 }
@@ -47,11 +47,11 @@ section{
 }
 
 .section2 .logo-and-text-wrapper .floating-logo-wrapper{
-  flex: 0.7;
+  flex: 0.8;
 }
 
 .section2 .logo-and-text-wrapper .section-2-text-wrapper{
-  flex: 1.3;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   justify-content: center;
