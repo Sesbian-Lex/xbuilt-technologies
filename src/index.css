@@ -21,6 +21,7 @@ html {
   --accent-color-2: #34d8d8;
   --borders: #223146;
   --gray-text-color: #cacccec4;
+  --gray-text-color-2: #3d3d3d;
   color: var(--text-color);
   background-color: #0c0c0c;
 
@@ -38,6 +39,27 @@ html {
   --space-tight: calc(var(--body) * 0.618);
   --space-base: var(--body);
   --space-loose: calc(var(--body) * var(--phi));
+}
+
+.page-title{
+  /* background: #EDF0F3;
+  background: linear-gradient(to right, #EDF0F3 0%, #BBBBBB 55%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: var(--text-color);
+  z-index: 1;
+
+  text-shadow: 5px 0px 8px rgba(0, 0, 0, 0.75);
+}
+
+.title-size{
+  font-size: 96px;
+}
+
+.sub-title{
+  color: var(--gray-text-color);
+  text-align: center;
+  width: 55vw;
 }
 
 @media (min-width: 1500px) {
@@ -94,14 +116,22 @@ h3{
 }
 
 .title-gradient {
-  background: linear-gradient(
+  /* background: linear-gradient(
     360deg,
     #00353c 0%,
     #00a9bd 75%
   );
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: transparent; */
+  background: #5E5E5E;
+  background: linear-gradient(to right, #5E5E5E 0%, #BBBBBB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4); */
+  /* text-shadow: 2px 2px 0 #000; */
+  filter: drop-shadow(4px 3px 0 #453b3b);
+
 }
 
 

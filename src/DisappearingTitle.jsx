@@ -40,7 +40,7 @@ function DisappearingTitle({progress}){
 
                     <div className='why-card-wrapper-squared'>
                         <div className='why-card'>
-                            <h1 style={{textAlign:'left'}} className='title-gradient'>01</h1>
+                            <h1 style={{textAlign:'left'}} >01</h1>
                             <h2>
                             Your website looks great but it doesn’t convert.
                             </h2>
@@ -56,7 +56,7 @@ function DisappearingTitle({progress}){
                     </div>
                     <div className='why-card-wrapper-squared'>
                         <div className='why-card'>
-                            <h1 style={{textAlign:'left'}} className='title-gradient'>02</h1>
+                            <h1 style={{textAlign:'left'}} >02</h1>
                             <h2>
                                 No Clear Path to Conversion
                             </h2>
@@ -73,7 +73,7 @@ function DisappearingTitle({progress}){
                     </div>
                     <div className='why-card-wrapper-squared'>
                         <div className='why-card'>
-                            <h1 style={{textAlign:'left'}} className='title-gradient'>03</h1>
+                            <h1 style={{textAlign:'left'}} >03</h1>
                             <h2>
                                 Generic Templates,
                                 Weak Brand
@@ -92,7 +92,7 @@ function DisappearingTitle({progress}){
 
                     <div className='why-card-wrapper-squared'>
                         <div className='why-card'>
-                            <h1 style={{textAlign:'left'}} className='title-gradient'>04</h1>
+                            <h1 style={{textAlign:'left'}} >04</h1>
                             <h2>
                                 Your Website Isn’t
                                 Driving Growth 
@@ -120,7 +120,7 @@ function DisappearingTitle({progress}){
         
                 </div>
 
-                <h3 className='sub-title margin-24'>Platforms & Tools We Use</h3>
+                {/* <h3 className='sub-title margin-24'>Platforms & Tools We Use</h3> */}
 
                 <LogoCards/>
 

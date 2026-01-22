@@ -42,7 +42,7 @@ function App() {
 
       <section className='section2' id='aboutUs'>
 
-        <h1 className='title-gradient title-size'>ABOUT US</h1>
+        <h1 className='page-title title-size'>ABOUT US</h1>
         <div className='logo-and-text-wrapper'>
           <div className='floating-logo-wrapper'>
             <FloatingLogoCanvas/>
@@ -200,7 +200,7 @@ function App() {
       </section>
 
       <section className='section5' id='testimonals'>
-        <h1 className='title-gradient title-size'>TESTIMONALS</h1>
+        <h1 className='page-title title-size'>TESTIMONALS</h1>
         <div className='testimonal-cards-wrapper'> 
           <div className='testimonal-card'>
             <img src={TempProfile}/>

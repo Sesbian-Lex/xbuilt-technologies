@@ -11,21 +11,6 @@
   font-weight: 400;
 }
 
-.page-title{
-  color: var(--page-title-color);
-  text-shadow: 5px 0px 8px rgba(0, 0, 0, 0.75);
-}
-
-.title-size{
-  font-size: 96px;
-}
-
-.sub-title{
-  color: var(--gray-text-color);
-  text-align: center;
-  width: 55vw;
-}
-
 @media (max-width: 1499px) and (min-width: 900px){
   .title-size{
     font-size: 64px;
@@ -157,6 +142,11 @@
 
 .why-card h1 {
   margin-bottom: var(--space-tight);
+  background: #0C0C0C;
+  background: linear-gradient(to right, #0C0C0C 0%, #5D3C3C 35%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
 
 .why-card h2 {
@@ -164,7 +154,7 @@
 }
 
 .why-card h3{
-  color: rgba(13, 13, 13, 0.93);
+  color: var(--gray-text-color-2);
 }
 
 .why-card-wrapper{
