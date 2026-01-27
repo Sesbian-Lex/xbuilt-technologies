@@ -62,7 +62,7 @@ html {
   width: 55vw;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
   :root {
     --h1: 56px;
     --h2: calc(var(--h1) / var(--phi));
@@ -70,7 +70,7 @@ html {
   }
 }
 
-@media (max-width: 1499px) and (min-width: 900px) {
+@media (max-width: 1599px) and (min-width: 900px) {
   :root {
     --h1: 40px;
     --h2: calc(var(--h1) / var(--phi));
