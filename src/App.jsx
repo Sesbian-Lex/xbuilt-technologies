@@ -25,7 +25,7 @@ import CTAButton from './CTAButton.jsx'
 function App() {
   const [progress, setProgress] = useState(0.26)
 
-  useEffect(()=>{console.log(progress)},[progress])
+  // useEffect(()=>{console.log(progress)},[progress])
 
   return (
     <>

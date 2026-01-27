@@ -25,7 +25,7 @@ function HomeCanvas({ progress, progressUpdate }){
         // console.log(progress)
         //only allow scrubbing if progress is below 0.95 and animation is not yet complete
         if(progress < 0.96) {
-            console.log("less than 0.96")
+            // console.log("less than 0.96")
             document.addEventListener('wheel', scrollScrub, config)
 
             return () => {
