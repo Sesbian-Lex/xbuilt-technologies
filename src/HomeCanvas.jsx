@@ -2,121 +2,206 @@ import './HomeCanvas.css'
 import { useState, useRef, useEffect, Suspense, useCallback } from 'react'
 import { Canvas } from '@react-three/fiber'
 import AnimatedLogoModel from './AnimatedLogoModel';
+import LogoCards from './LogoCards.jsx'
 
 
 
-function HomeCanvas({ progress, progressUpdate }){
+function HomeCanvas({
+     progress, progressUpdate 
+    }){
+    // const [progress, setProgress] = useState(0.26)
     const canvas = useRef();
-    const config = {passive : false}
-    let colorProgress = 0;
-    const minProg = 0.26;
-    const maxProg = 0.96;
-    const scrubbing = useRef(false)
+    const canvasWrapperRef = useRef();
+    const titleWrapperRef = useRef();
+     const titleWrapperRef2 = useRef();
 
-    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-    useEffect(() => {
-        if(window.scrollY > 100) {
-            progressUpdate(0.955);
-            document.addEventListener('wheel', handleWheelProgress)
-            return
-        
+     useEffect(()=>{
+        if( window.scrollY > window.innerHeight) {
+            titleWrapperRef.current.style.setProperty('opacity', `0`)
+            titleWrapperRef.current.style.setProperty('display', 'none')
         }
-        // console.log(progress)
-        //only allow scrubbing if progress is below 0.95 and animation is not yet complete
-        if(progress < 0.96) {
-            // console.log("less than 0.96")
-            document.addEventListener('wheel', scrollScrub, config)
+     },[])
 
-            return () => {
-                document.removeEventListener('wheel', scrollScrub);
-            };
-        } 
-        else {
-            //adds a listener if the user gets back to the object
-            document.addEventListener('wheel', handleWheelProgress)
-        }
+        useEffect(()=>{
+            window.addEventListener("scroll", ()=>{
+                
+                const tempTop =  canvasWrapperRef.current.getBoundingClientRect().top
+                const viewHeight = window.innerHeight
 
-    },[progress])
+                if(tempTop < 0 && tempTop > -viewHeight*2){
+                    const tempProg = tempTop / (-viewHeight*2)
+                    progressUpdate( Math.min(1, Math.max(0.26, tempProg)))
+                    console.log("tempProg:", tempProg)
 
-    const handleWheelProgress = useCallback(()=>{
-                const currentScroll = window.scrollY;
-                // console.log("currrent scroll: ", currentScroll)
-                // console.log(progress)
-                // console.log(currentScroll < 20 ? '1T' : '1F', progress > 0.94 ? '2T' : '2F')
-                if(currentScroll < 20 && progress > 0.95){
-                    // console.log(progress)
-                    progressUpdate(0.94);
-                    document.removeEventListener('wheel', handleWheelProgress)
+                    canvas.current.style.setProperty('--progress', `${Math.min(1, Math.max(0, tempProg))}`)
+
+                    if(tempProg > 0.26 && tempProg < 0.51){
+                        let tempOpacity = 1 - (tempProg - 0.26)/0.24
+
+                        if(tempOpacity < 0.3) tempOpacity = 0;
+
+                        console.log(Math.min(1, Math.max(0, tempOpacity)))
+
+                        titleWrapperRef.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity))}`)
+                    }
+
+                    if( tempProg < 0.51){
+                        titleWrapperRef.current.style.setProperty('display', 'flex')
+                    } else {
+                        titleWrapperRef.current.style.setProperty('display', 'none')
+                        // console.log("display none")
+                    }
+
+                    if(tempProg > 0.8 && tempProg < 0.99){
+                        let tempOpacity2 = (tempProg - 0.8)/0.19
+
+                        if(tempOpacity2 < 0.2) tempOpacity2 = 0;
+                        if(tempOpacity2 > 0.98) tempOpacity2 = 1;
+
+                        console.log(Math.min(1, Math.max(0, tempOpacity2)))
+
+                        titleWrapperRef2.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity2))}`)
+                    }
                 }
-    })
-
-    useEffect(()=>{
-        // console.log(progress)
-        colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
-        if(colorProgress > 0.99) colorProgress = 0.99;
-        // console.log('colorProgress',(colorProgress))
-        canvas.current.style.setProperty('--progress', `${(colorProgress)}`)//limits it to 99% but also dividing again to 100 to return to decimal
+                
+            })
+        },[])
 
 
-    }, [progress])
-
-    const scrollScrub = useCallback(async (e) => {
-            
-            // console.log(scrubbing.current)
-            if(scrubbing.current) return;
-
-            e.preventDefault();
-            scrubbing.current = true
-
-            // if scroll is positive or negative
-            // 0.015 is the animation scrub amount, increase for faster scrubbing
-            // 0.255, minimum scrubbing, don't scrub less than that to avoid
-            //// initial animation 
-            if(e.deltaY > 0){
-
-                e.preventDefault();
-
-                progressUpdate((prev)=> prev + 0.0225)
-                scrubbing.current = false
-
-            } else if(e.deltaY < 0){
-                e.preventDefault();
-                if(progress - 0.015 < minProg){
-                    scrubbing.current = false
-                    return
-                } else {
-
-                    progressUpdate((prev)=> prev - 0.0225)
-                    scrubbing.current = false
-
-
-                }
-            } 
-        }
-    )
 
     return(
-        <div ref={canvas} 
-            className='animated-logo'>
+        <div ref={canvasWrapperRef} className='canvas-wrapper'>
 
-            <Canvas 
-                camera={{ position: [0, 0, 12.5], fov: 30
-                }}>    
+            <div className='title-wrapper' ref={titleWrapperRef}>
+                <h1 className='page-title slide-up-fade-in title-size'>
+                    <span>Turn Your Website</span> 
+                    <br/>
+                    <span>into a Sales Weapon</span>
+                </h1>
+                <h2 className='sub-title slide-up-fade-in'>We build custom websites and funnels that attract your ideal
+                clients, automate sales, and turn leads into paying customers</h2>
+            </div>
 
-                <Suspense fallback={null}>
+            <div ref={canvas} 
+                className='animated-logo'>
 
-                    <directionalLight intensity={2} position={[0, 10, 0]} castShadow/>
-                    <pointLight position={[-10, -10, -2]} intensity={50} />
-                    <pointLight position={[0, 0, 10]} intensity={90} />
+                <Canvas 
+                    camera={{ position: [0, 0, 12.5], fov: 30
+                    }}>    
 
-                    <AnimatedLogoModel progress={progress}/>
+                    <Suspense fallback={null}>
 
-                </Suspense>
+                        <directionalLight intensity={2} position={[0, 10, 0]} castShadow/>
+                        <pointLight position={[-10, -10, -2]} intensity={50} />
+                        <pointLight position={[0, 0, 10]} intensity={90} />
 
-            </Canvas>
+                        <AnimatedLogoModel progress={progress}/>
+
+                    </Suspense>
+
+                </Canvas>
+
+            </div>  
+
+            <div className='title-wrapper-2' ref={titleWrapperRef2}>
+                <h1 className='title-gradient title-size'>
+                    <span>WHY WORK WITH US</span> 
+                </h1>
+                <h2 className='sub-title'>Sounds Familliar?</h2>
+
+                <div className='why-card-wrapper'>
+
+                    <div className='why-card-wrapper-squared'>
+                        <div className='why-card'>
+                            <h1 style={{textAlign:'left'}} >01</h1>
+                            <h2>
+                            Your website looks great but it doesn’t convert.
+                            </h2>
+                            <h3>
+                                You’ve invested in design, but
+                                visitors browse and leave without
+                                taking action. Instead of generating
+                                leads, your site becomes a digital
+                                brochure that doesn’t drive real
+                                business results.
+                            </h3>
+                        </div>
+                    </div>
+                    <div className='why-card-wrapper-squared'>
+                        <div className='why-card'>
+                            <h1 style={{textAlign:'left'}} >02</h1>
+                            <h2>
+                                No Clear Path to Conversion
+                            </h2>
+                            <h3>
+                                Without structured sales pipelines
+                                and conversion-focused funnels,
+                                prospects get lost or leave before
+                                taking action. Your website may
+                                look great, but it fails to guide
+                                visitors into becoming paying
+                                clients.
+                            </h3>
+                        </div>
+                    </div>
+                    <div className='why-card-wrapper-squared'>
+                        <div className='why-card'>
+                            <h1 style={{textAlign:'left'}} >03</h1>
+                            <h2>
+                                Generic Templates,
+                                Weak Brand
+                            </h2>
+                            <h3>
+                                While templates may look
+                                professional at first glance, they
+                                often fail to reflect your unique
+                                brand identity. Visitors notice the
+                                sameness, and your business
+                                struggles to stand out in a
+                                crowded market.
+                            </h3>
+                        </div>
+                    </div>                    
+
+                    <div className='why-card-wrapper-squared'>
+                        <div className='why-card'>
+                            <h1 style={{textAlign:'left'}} >04</h1>
+                            <h2>
+                                Your Website Isn’t
+                                Driving Growth 
+                            </h2>
+                            <h3>
+                                Many businesses invest in a site or
+                                funnel, only to see little to no
+                                return. Without systems designed
+                                to generate leads, nurture
+                                prospects, and close sales, your
+                                website becomes just another
+                                expense instead of a growth
+                                engine.
+                            </h3>
+                        </div>
+                    </div>  
+
+
+
+
+
+
+
+
+        
+                </div>
+
+
+                <LogoCards/>
+
+
+            </div>
+
 
         </div>
+
     )
 }
 

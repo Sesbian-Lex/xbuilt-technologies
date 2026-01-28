@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import './App.css'
-import DisappearingTitle from './DisappearingTitle.jsx'
 import HomeCanvas from './HomeCanvas.jsx'
 import ScrollBar from './ScrollBar.jsx'
 import NavBar  from './NavBar.jsx'
@@ -30,13 +29,17 @@ function App() {
   return (
     <>
       <ScrollBar/>
-      <NavBar progress={progress}/> 
+      <NavBar 
+      progress={progress}
+      /> 
       
       
       <section className='section1' id='home'>
 
-        <DisappearingTitle progress={progress}/>
-        <HomeCanvas progress={progress} progressUpdate={setProgress}/>
+        {/* <DisappearingTitle progress={progress}/> */}
+        <HomeCanvas 
+          progress={progress} progressUpdate={setProgress}
+        />
 
       </section>
 
