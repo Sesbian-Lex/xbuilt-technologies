@@ -34,7 +34,7 @@ function MovingSamples(){
             if(tempTop < 0 && tempTop > -viewHeight*2){
                 const tempProg = tempTop / (-viewHeight*2)
                 setProgress2( Math.min(100, Math.max(0, tempProg)))
-                console.log(tempProg)
+                // console.log(tempProg)
             }
             
         })

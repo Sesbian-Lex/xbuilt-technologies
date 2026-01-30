@@ -31,7 +31,7 @@ function HomeCanvas({
                 if(tempTop < 0 && tempTop > -viewHeight*2){
                     const tempProg = tempTop / (-viewHeight*2)
                     progressUpdate( Math.min(1, Math.max(0.26, tempProg)))
-                    console.log("tempProg:", tempProg)
+                    // console.log("tempProg:", tempProg)
 
                     canvas.current.style.setProperty('--progress', `${Math.min(1, Math.max(0, tempProg))}`)
 
@@ -40,7 +40,7 @@ function HomeCanvas({
 
                         if(tempOpacity < 0.3) tempOpacity = 0;
 
-                        console.log(Math.min(1, Math.max(0, tempOpacity)))
+                        // console.log(Math.min(1, Math.max(0, tempOpacity)))
 
                         titleWrapperRef.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity))}`)
                     }
@@ -58,7 +58,7 @@ function HomeCanvas({
                         if(tempOpacity2 < 0.2) tempOpacity2 = 0;
                         if(tempOpacity2 > 0.98) tempOpacity2 = 1;
 
-                        console.log(Math.min(1, Math.max(0, tempOpacity2)))
+                        // console.log(Math.min(1, Math.max(0, tempOpacity2)))
 
                         titleWrapperRef2.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity2))}`)
                     }

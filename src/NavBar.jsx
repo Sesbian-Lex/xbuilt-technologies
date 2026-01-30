@@ -160,7 +160,7 @@ function NavBar({progress}) {
         <nav className='nav-bar' ref={navRef}>
             {/* <div className='background-div' ref={backgroundRef}></div> */}
             <div className='logo-wrapper nav-column'>
-                <h2 className='old-font' ref={logoRef}>XBUILT Technologies</h2>
+                <h2 className='old-font' ref={logoRef} >XBUILT Technologies</h2>
                 {/* <img src={dota2Logo}></img> */}
             </div>
 

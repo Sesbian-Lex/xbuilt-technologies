@@ -20,6 +20,7 @@ import AccordionFaq from './AccordionFaq.jsx'
 import TempProfile from './assets/temp-profile-pic.webp'
 import ClosingImg from './assets/closing-image.png'
 import CTAButton from './CTAButton.jsx'
+import ProcessSection from './ProcessSection.jsx'
 
 function App() {
   const [progress, setProgress] = useState(0.26)
@@ -104,7 +105,10 @@ function App() {
         <ServiceCarousel/>
         <br/><br/><br/><br/><br/><br/><br/>
 
-        <div id='landingPage' className='service-explanation-wrapper'>
+      </section>
+
+      <section className='section3_5' id='ourServices'>
+                <div id='landingPage' className='service-explanation-wrapper'>
           <div className='service-img-wrapper'>
               <img src={LandingPageImg}/>
           </div>
@@ -193,6 +197,10 @@ function App() {
             </h3>
           </div>
         </div>
+      </section>
+
+      <section className='section4_5' id='processSection'>
+        <ProcessSection />
 
       </section>
 

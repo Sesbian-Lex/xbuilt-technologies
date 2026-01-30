@@ -20,8 +20,8 @@ html {
   --accent-color: #00b5da;
   --accent-color-2: #34d8d8;
   --borders: #223146;
-  --gray-text-color: #cacccec4;
-  --gray-text-color-2: #3d3d3d;
+  --gray-text-color: rgba(202, 204, 206, 0.70);
+  --gray-text-color-2: rgb(61, 61, 61);
   color: var(--text-color);
   background-color: #0c0c0c;
 
