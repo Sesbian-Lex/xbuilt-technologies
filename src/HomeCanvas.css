@@ -18,8 +18,30 @@
     animation-delay: calc(var(--progress) * -1s);
     pointer-events: none;
     filter: blur(0px);
+}
 
+.will-disappear{
+  width: 100%;
+  height: 100%;
+  animation: willDisappear 1s linear paused;
+  animation-delay: calc(var(--progress) * -1s);
+}
 
+@keyframes willDisappear {
+  0%{
+    opacity: 1;
+  }
+
+  88%{
+    opacity: 1;
+  }
+
+  98%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 .animated-logo::before{
@@ -37,10 +59,12 @@
   0% {
     background-color: var(--background-color-gray);
     filter: blur(0px);
+    opacity: 1;
   }
 
   80%{
     filter: blur(0px);
+    opacity: 1;
   }
 
   95% {
@@ -51,6 +75,7 @@
   100% {
     filter: blur(10px);
     background-color: var(--background-color-red);
+    opacity: 0;
   }
 }
 
@@ -72,7 +97,7 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    justify-content: center;
+    justify-content: start;
     align-content: center;
     align-items: center;
     position: absolute;

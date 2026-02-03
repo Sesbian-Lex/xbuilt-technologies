@@ -36,11 +36,12 @@ function HomeCanvas({
 
             window.requestAnimationFrame(() => {
 
-                if (tempTop < 0 && tempTop > -viewHeight * 2) {
+                if (tempTop < 0 && tempTop > -viewHeight * 1.5) {
 
-                const tempProg = tempTop / (-viewHeight * 2);
+                const tempProg = tempTop / (-viewHeight * 1.5);
 
                 progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
+                console.log(tempProg)
 
                 canvas.current.style.setProperty(
                     '--progress',
@@ -116,23 +117,23 @@ function HomeCanvas({
 
             <div ref={canvas} 
                 className='animated-logo'>
+                    <div className='will-disappear'>
+                        <Canvas 
+                            camera={{ position: [0, 0, 12.5], fov: 30
+                            }}>    
 
-                <Canvas 
-                    camera={{ position: [0, 0, 12.5], fov: 30
-                    }}>    
+                            <Suspense fallback={null}>
 
-                    <Suspense fallback={null}>
+                                <directionalLight intensity={2} position={[0, 10, 0]} castShadow/>
+                                <pointLight position={[-10, -10, -2]} intensity={50} />
+                                <pointLight position={[0, 0, 10]} intensity={90} />
 
-                        <directionalLight intensity={2} position={[0, 10, 0]} castShadow/>
-                        <pointLight position={[-10, -10, -2]} intensity={50} />
-                        <pointLight position={[0, 0, 10]} intensity={90} />
+                                <AnimatedLogoModel progress={progress}/>
 
-                        <AnimatedLogoModel progress={progress}/>
+                            </Suspense>
 
-                    </Suspense>
-
-                </Canvas>
-
+                        </Canvas>
+                    </div>
             </div>  
 
             <div className='title-wrapper-2' ref={titleWrapperRef2}>
