@@ -22,50 +22,82 @@ function HomeCanvas({
         }
      },[])
 
-        useEffect(()=>{
-            window.addEventListener("scroll", ()=>{
-                
-                const tempTop =  canvasWrapperRef.current.getBoundingClientRect().top
-                const viewHeight = window.innerHeight
+    useEffect(() => {
 
-                if(tempTop < 0 && tempTop > -viewHeight*2){
-                    const tempProg = tempTop / (-viewHeight*2)
-                    progressUpdate( Math.min(1, Math.max(0.26, tempProg)))
-                    // console.log("tempProg:", tempProg)
+        let isTicking = false
 
-                    canvas.current.style.setProperty('--progress', `${Math.min(1, Math.max(0, tempProg))}`)
+        const handleScroll = () => {
 
-                    if(tempProg > 0.26 && tempProg < 0.51){
-                        let tempOpacity = 1 - (tempProg - 0.26)/0.24
+            
+            const tempTop = canvasWrapperRef.current.getBoundingClientRect().top;
+            const viewHeight = window.innerHeight;
 
-                        if(tempOpacity < 0.3) tempOpacity = 0;
+            if (!isTicking) {
 
-                        // console.log(Math.min(1, Math.max(0, tempOpacity)))
+            window.requestAnimationFrame(() => {
 
-                        titleWrapperRef.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity))}`)
-                    }
+                if (tempTop < 0 && tempTop > -viewHeight * 2) {
 
-                    if( tempProg < 0.51){
-                        titleWrapperRef.current.style.setProperty('display', 'flex')
-                    } else {
-                        titleWrapperRef.current.style.setProperty('display', 'none')
-                        // console.log("display none")
-                    }
+                const tempProg = tempTop / (-viewHeight * 2);
 
-                    if(tempProg > 0.8 && tempProg < 0.99){
-                        let tempOpacity2 = (tempProg - 0.8)/0.19
+                progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
 
-                        if(tempOpacity2 < 0.2) tempOpacity2 = 0;
-                        if(tempOpacity2 > 0.98) tempOpacity2 = 1;
+                canvas.current.style.setProperty(
+                    '--progress',
+                    `${Math.min(1, Math.max(0, tempProg))}`
+                );
 
-                        // console.log(Math.min(1, Math.max(0, tempOpacity2)))
+                if (tempProg > 0.26 && tempProg < 0.51) {
 
-                        titleWrapperRef2.current.style.setProperty('opacity', `${Math.min(1, Math.max(0, tempOpacity2))}`)
-                    }
+                    let tempOpacity = 1 - (tempProg - 0.26) / 0.24;
+
+                    if (tempOpacity < 0.3) tempOpacity = 0;
+
+                    titleWrapperRef.current.style.setProperty(
+                        'opacity',
+                        `${Math.min(1, Math.max(0, tempOpacity))}`
+                    );
                 }
-                
-            })
-        },[])
+
+                if (tempProg < 0.51) {
+                    titleWrapperRef.current.style.setProperty('display', 'flex');
+                } else {
+                    titleWrapperRef.current.style.setProperty('display', 'none');
+                }
+
+                if (tempProg > 0.8 && tempProg < 0.99) {
+
+                    let tempOpacity2 = (tempProg - 0.8) / 0.19;
+
+                    if (tempOpacity2 < 0.2) tempOpacity2 = 0;
+                    if (tempOpacity2 > 0.98) tempOpacity2 = 1;
+
+                    titleWrapperRef2.current.style.setProperty(
+                        'opacity',
+                        `${Math.min(1, Math.max(0, tempOpacity2))}`
+                    );
+                }
+            }
+
+                isTicking = false;
+            });
+
+            isTicking = true;
+        }
+
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        console.log("HomeCanvas mounted");
+
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            console.log("HomeCanvas unmounted");
+        };
+
+    }, []);
+
 
 
 
