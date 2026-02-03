@@ -1,9 +1,9 @@
 import './ProcessSection.css'
 
-function ProcessCard({ title='Title' , text='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium modi corporis sint eius delectus amet repellat ipsum explicabo molestias, ex saepe eaque nihil ea dolorum pariatur culpa illo minus est.', number='01'}){
+function ProcessCard({ title='Title' , text='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium modi corporis sint eius delectus amet repellat ipsum explicabo molestias, ex saepe eaque nihil ea dolorum pariatur culpa illo minus est.', number='01', ref}){
 
     return(
-        <div className='process-card'>   
+        <div className='process-card' ref={ref}>   
             <h3 className='card-number'><><div> {number} </div></></h3>
             <hr/>
             <h2>{title}</h2>

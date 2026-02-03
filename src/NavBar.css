@@ -40,7 +40,19 @@
   left: 0;
 } */
 
+.nav-bar:hover{
+  background-color: #0c0c0c66;
+}
 
+.nav-bar:hover .nav-item {
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+}
+
+/* Restore hovered item */
+.nav-bar:hover .nav-item:hover {
+  opacity: 1;
+}
 
 
 

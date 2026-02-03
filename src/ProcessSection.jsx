@@ -1,5 +1,6 @@
 import './ProcessSection.css'
 import ProcessCard from './ProcessCard.jsx'
+import { useRef } from 'react'
 
 function ProcessSection(){
 
@@ -12,6 +13,12 @@ function ProcessSection(){
     const title4 = "Launch"
     const text4 = "We launch your site, connect the analytics, and make sure everything works perfectly."
 
+    const ref1 = useRef()
+    const ref2 = useRef()
+    const ref3 = useRef()
+    const ref4 = useRef()
+
+
     return(
         <div className='process-wrapper'>
             <h2>Process</h2>
@@ -20,10 +27,10 @@ function ProcessSection(){
             
 
             <div className='process-card-wrapper'>
-                <ProcessCard title={title1} text={text1} number='01'/>
-                <ProcessCard title={title2} text={text2} number='02'/>
-                <ProcessCard title={title3} text={text3} number='03'/>
-                <ProcessCard title={title4} text={text4} number='04'/>
+                <ProcessCard title={title1} text={text1} number='01' ref={ref1}/>
+                <ProcessCard title={title2} text={text2} number='02' ref={ref2}/>
+                <ProcessCard title={title3} text={text3} number='03' ref={ref3}/>
+                <ProcessCard title={title4} text={text4} number='04' ref={ref4}/>
             </div>
         </div>
     )
