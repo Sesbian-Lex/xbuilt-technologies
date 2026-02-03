@@ -28,25 +28,25 @@ function HomeCanvas({
 
         const handleScroll = () => {
 
-            
-            const tempTop = canvasWrapperRef.current.getBoundingClientRect().top;
-            const viewHeight = window.innerHeight;
 
             if (!isTicking) {
 
             window.requestAnimationFrame(() => {
 
+                const tempTop = canvasWrapperRef.current.getBoundingClientRect().top;
+                const viewHeight = window.innerHeight
+
                 if (tempTop < 0 && tempTop > -viewHeight * 1.5) {
 
-                const tempProg = tempTop / (-viewHeight * 1.5);
+                    const tempProg = tempTop / (-viewHeight * 1.5);
 
-                progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
-                console.log(tempProg)
+                    progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
+                    console.log(tempProg)
 
-                canvas.current.style.setProperty(
-                    '--progress',
-                    `${Math.min(1, Math.max(0, tempProg))}`
-                );
+                    canvas.current.style.setProperty(
+                        '--progress',
+                        `${Math.min(1, Math.max(0, tempProg))}`
+                    );
 
                 if (tempProg > 0.26 && tempProg < 0.51) {
 
