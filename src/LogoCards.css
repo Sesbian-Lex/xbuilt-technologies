@@ -23,9 +23,9 @@
     text-align: center;
 }
 
-@media (max-width: 1499px) and (min-width: 900px)  {
+@media (max-width: 1599px) and (min-width: 900px)  {
   .logo-cards > img{
-    width: 64px;
+    width: 84px;
   }
 }
 
@@ -39,6 +39,6 @@
   }
     
   .logo-cards > img{
-    width: 48px;
+    width: 64px;
   }
 }

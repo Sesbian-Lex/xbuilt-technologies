@@ -14,10 +14,9 @@
     padding-bottom: 5px;
     z-index: 10;
     transition: all 0.5s ease-in-out;
-    opacity: 1;
+    opacity: 0;
     animation: hideNav 1s linear paused;
     animation-delay: calc(var(--progress) * -1s);
-    opacity: 1;
 }
 
 /* .nav-bar:hover{
@@ -75,18 +74,10 @@
     display: none;
   }
 
-  95%{
-    opacity: 0;
-    display: flex;
-  }
-
-  99%{
-    opacity: 1;
-  }
 
   100%{
-    opacity: 1;
-    display: flex;
+    opacity: 0;
+    display: none;
   }
 }
 

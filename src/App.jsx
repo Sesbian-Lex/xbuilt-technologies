@@ -16,14 +16,15 @@ import OurServices2 from './OurServices2.jsx'
 
 function App() {
   const [progress, setProgress] = useState(0.26)
+  const [showBar, setShowBar] = useState(false)
 
   // useEffect(()=>{console.log(progress)},[progress])
 
   return (
     <>
-      <ScrollBar/>
+      <ScrollBar showBar={showBar} setShowBar={setShowBar}/>
       <NavBar 
-      progress={progress}
+      progress={progress} showBar={showBar}
       /> 
       
       

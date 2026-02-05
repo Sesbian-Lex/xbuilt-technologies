@@ -6,9 +6,7 @@ import LogoCards from './LogoCards.jsx'
 
 
 
-function HomeCanvas({
-     progress, progressUpdate 
-    }){
+function HomeCanvas({ progress, progressUpdate }){
     // const [progress, setProgress] = useState(0.26)
     const canvas = useRef();
     const canvasWrapperRef = useRef();
@@ -41,7 +39,7 @@ function HomeCanvas({
                     const tempProg = tempTop / (-viewHeight * 1.5);
 
                     progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
-                    console.log(tempProg)
+                    // console.log(tempProg)
 
                     canvas.current.style.setProperty(
                         '--progress',
@@ -66,9 +64,9 @@ function HomeCanvas({
                     titleWrapperRef.current.style.setProperty('display', 'none');
                 }
 
-                if (tempProg > 0.8 && tempProg < 0.99) {
+                if (tempProg > 0.6 && tempProg < 0.99) {
 
-                    let tempOpacity2 = (tempProg - 0.8) / 0.19;
+                    let tempOpacity2 = (tempProg - 0.6) / 0.30;
 
                     if (tempOpacity2 < 0.2) tempOpacity2 = 0;
                     if (tempOpacity2 > 0.98) tempOpacity2 = 1;

@@ -2,7 +2,7 @@ import { useRef, useEffect, useCallback } from 'react'
 import './NavBar.css'
 import CTAButton from './CTAButton'
 
-function NavBar({progress}) {
+function NavBar({progress, showBar}) {
     //used the same colorProgress varaible for easier syntax
     //progress is used to determine when navbar should disappear while animating
     //refer to NavBar.css to change the timings
@@ -24,11 +24,22 @@ function NavBar({progress}) {
         // console.log(progress)
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
         // console.log((colorProgress*99)/100)
-        navRef.current.style.setProperty('--progress', `${(colorProgress*99)/100}`)//limits it to 99% but also dividing again to 100 to return to decimal
+        navRef.current.style.setProperty('--progress', `${Math.min(1, Math.max(0, colorProgress))}`)//limits it to 99% but also dividing again to 100 to return to decimal
 
-        const currentScroll = window.scrollY
-        if(currentScroll > window.innerHeight * 2) navRef.current.style.setProperty('--progress', `1`)
+        // const currentScroll = window.scrollY
+        // if(currentScroll > window.innerHeight * 2) navRef.current.style.setProperty('--progress', `1`)
     }, [progress])
+
+
+    useEffect(()=>{
+        if(showBar){
+            navRef.current.style.opacity = '1';
+        } else {
+            navRef.current.style.opacity = '0';
+        }
+
+    },[showBar])
+
 
     return(
         <nav className='nav-bar' ref={navRef}>

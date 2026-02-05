@@ -100,13 +100,13 @@
     justify-content: start;
     align-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
+    position: sticky;
+    top: 0%;
     /* background-color: #0C0C0C; */
     /* transform: translateY(-20%); */
     opacity: 0;
     /* filter: blur(0px); */
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
 
 }
 
