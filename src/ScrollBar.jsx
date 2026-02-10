@@ -26,7 +26,7 @@ function ScrollBar({showBar, setShowBar}){
 
                     scrollBarRef.current.style.width = `${(currentScroll/(docHeight-windowHeight))*100}vw`
 
-                    console.log(currentScroll > windowHeight * 3)
+                    // console.log(currentScroll > windowHeight * 3)
 
                     if (currentScroll > windowHeight * 3) {
                       setShowBar(true)

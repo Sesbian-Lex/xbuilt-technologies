@@ -4,15 +4,16 @@
 }
 
 .moving-samples-wrapper{
+    display: flex;
     --progress2: 0;
-    position: sticky;
-    top: 0;
+    position: relative;
+    /* top: 0; */
     height: 100vh;
     width: 100vw;
     background-color: #737373;
     animation: gradientChange 1s linear paused;
     animation-delay: calc(var(--progress2) * -1s);
-    padding: 30px;
+    /* padding: 30px; */
 }
 
 .moving-samples-wrapper::before{
@@ -32,45 +33,58 @@
   100% {background-color: var(--background-color-red);}
 }
 
+.sticky-part{
+    position: sticky;
+    top: 0;
+    left: 0;
+}
 
 .moving-sample-card{
     display: flex;
     flex-direction: column;
-    width: 13%;
+    width: 20%;
+    /* background-color: #a7a7a766; */
+    /* transform: translateY(-50%) ; */
     /* aspect-ratio: 4/5; */
     justify-content: center;
     align-items: center;
     align-content: center;
     position: absolute;
-    animation: MovingSamplesWidthAnimation 1s linear paused;
-    animation-delay: calc(var(--progress2) * -1s);
+    transform: translateX(-50%) ;
+    /* animation: MovingSamplesWidthAnimation 1s linear paused; */
+    /* animation-delay: calc(var(--progress2) * -1s); */
 }
 
 .moving-samples-title{
     animation: TextDisappear 1s linear paused;
     animation-delay: calc(var(--progress2) * -1s);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin-top: 30px;
 }
 
 
 .moving-sample-card img {
     width: 100%;
     animation: MovingImageAnimation 1s linear paused;
-    animation-delay: calc(var(--progress2) * -1s);
+    animation-delay: calc(var(--progress2) * -1s);   
 }
 
 @keyframes MovingImageAnimation {
     0% {
-        width: 100%;
+        width: 70%;
 
     }
 
     50% {
-        width: 100%;
+        width: 70%;
 
     }
 
     100% {
-        width: 55%;
+        width: 80%;
     }
 }
 
@@ -86,13 +100,6 @@
     animation-delay: calc(var(--progress2) * -1s);
 }
 
-
-#homirx{
-    position: absolute;
-    /* top: 0;
-    left: 50%; */
-
-}
 
 .moving-sample-card h2, .moving-sample-card h3 {
     animation: MovingSamplesAnimation 1s linear paused;
@@ -150,37 +157,96 @@
 
 }
 
-/* @keyframes homirxMovement {
-    0%{
-        left: 75%;
-    }
 
-    50% {
-        left: 75%;
-    }
-
-    100% {
-        left: 25%;
-    }
-
-} */
 
 #alexi{
     z-index: 5;
+    top: 60%;
+    left: 72%;
+    animation: alexiMovement 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
 }
 
 #sultin{
     z-index: 4;
+    top: 45%;
+    left: 78%;
+    animation: sultinMovement 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
 }
 
 #timothy {
     z-index: 3;
+    top: 40%;
+    left: 68%;
+    animation: timothyMovement 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
 }
 
 #homirx {
     z-index: 2;
-    /* animation: homirxMovement 1s linear paused;
-    animation-delay: calc(var(--progress2) * -1s); */
+    top: 25%;
+    left: 75%;
+    animation: homirxMovement 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s);
+}
+
+@keyframes homirxMovement {
+    /* 0%{
+        left: 75%;
+        
+    } */
+
+    50% {
+        left: 75%;
+        top: 25%;
+    }
+
+    100% {
+        top: 8%;
+        left: 30%;
+    }
+}
+
+@keyframes timothyMovement {
+
+    50% {
+        top: 40%;
+        left: 68%;
+    }
+
+    100% {
+        top: 53%;
+        left: 30%;
+    }
+
+}
+
+@keyframes sultinMovement {
+    50% {
+        top: 45%;
+        left: 78%;
+    }
+
+    100% {
+        top: 8%;
+        left: 70%;
+    }
+
+}
+
+@keyframes alexiMovement {
+
+    50% {
+        top: 60%;
+        left: 72%;
+    }
+
+    100% {
+        top: 53%;
+        left: 70%;
+    }
+
 }
 
 .torn-paper{
