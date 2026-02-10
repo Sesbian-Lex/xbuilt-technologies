@@ -1,6 +1,6 @@
 import './ProcessSection.css'
 import ProcessCard from './ProcessCard.jsx'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 function ProcessSection(){
 

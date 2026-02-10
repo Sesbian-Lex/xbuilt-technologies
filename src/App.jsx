@@ -13,6 +13,10 @@ import CTAButton from './CTAButton.jsx'
 import ProcessSection from './ProcessSection.jsx'
 import AboutUs from './AboutUs.jsx'
 import OurServices2 from './OurServices2.jsx'
+import TimothyProfile from './assets/timothy-testimonals.png'
+import AlexiProfile from './assets/alexi-testimonals.png'
+import HomirxProfile from './assets/homirx-testimonals.png'
+
 
 function App() {
   const [progress, setProgress] = useState(0.26)
@@ -78,7 +82,7 @@ function App() {
         <h1 className='page-title title-size'>TESTIMONALS</h1>
         <div className='testimonal-cards-wrapper'> 
           <div className='testimonal-card'>
-            <img src={TempProfile}/>
+            <img src={TimothyProfile}/>
             <br/>
             <h3>
               “XBuilt Technology
@@ -95,7 +99,7 @@ function App() {
           </div>
 
           <div className='testimonal-card'>
-            <img src={TempProfile}/>
+            <img src={AlexiProfile}/>
             <br/>
             <h3>
               “From design to execution,
@@ -112,7 +116,7 @@ function App() {
           </div>
 
           <div className='testimonal-card'>
-            <img src={TempProfile}/>
+            <img src={HomirxProfile}/>
             <br/>
             <h3>
               “They transformed our landing page
