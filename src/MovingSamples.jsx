@@ -11,14 +11,10 @@ function MovingSamples(){
     const [progress2, setProgress2] = useState(0.03)
     const parentRef = useRef();
     const grandParentRef = useRef();
-    // const [left1, setLeft1] = useState(75);
-    // const [top1, setTop1] = useState(28);
-    // const [left2, setLeft2] = useState(66);
-    // const [top2, setTop2] = useState(40);
-    // const [left3, setLeft3] = useState(79);
-    // const [top3, setTop3] = useState(44);
-    // const [left4, setLeft4] = useState(70);
-    // const [top4, setTop4] = useState(55);
+
+    useEffect(()=>{
+        console.log(window.innerWidth)
+    },[])
 
       useEffect(() => {
 
@@ -79,7 +75,7 @@ function MovingSamples(){
         <Suspense>  
             <div className='moving-samples-wrapper-squared' ref={grandParentRef}>
                 <div className='sticky-part'>
-                    <div className='moving-samples-wrapper' ref={parentRef}>
+                    <div className='moving-samples-wrapper'  ref={parentRef}>
                         <h1 className='title-gradient title-size moving-samples-title'>OUR DESIGN PORTFOLIO</h1>
                         <h2 className='moving-samples-text'>Explore our portfolio to see how we turn ideas intor high-performance websites, funnels, and systems that deliver real results for our clients</h2>
                         <MovingSampleCard img={Img1} title={title1} text={text1} id='homirx' progress2={progress2}/>

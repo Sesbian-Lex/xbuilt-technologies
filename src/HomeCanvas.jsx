@@ -13,12 +13,12 @@ function HomeCanvas({ progress, progressUpdate }){
     const titleWrapperRef = useRef();
      const titleWrapperRef2 = useRef();
 
-     useEffect(()=>{
-        if( window.scrollY > window.innerHeight) {
-            titleWrapperRef.current.style.setProperty('opacity', `0`)
-            titleWrapperRef.current.style.setProperty('display', 'none')
-        }
-     },[])
+    //  useEffect(()=>{
+    //     if( window.scrollY > window.innerHeight) {
+    //         titleWrapperRef.current.style.setProperty('opacity', `0`)
+    //         titleWrapperRef.current.style.setProperty('display', 'none')
+    //     }
+    //  },[])
 
     useEffect(() => {
 
@@ -39,18 +39,21 @@ function HomeCanvas({ progress, progressUpdate }){
                     const tempProg = tempTop / (-viewHeight * 1.5);
 
                     progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
-                    // console.log(tempProg)
+                    console.log("tempProg" , tempProg)
 
                     canvas.current.style.setProperty(
                         '--progress',
                         `${Math.min(1, Math.max(0, tempProg))}`
                     );
 
-                if (tempProg > 0.26 && tempProg < 0.51) {
+                if (tempProg < 0.25) {
 
-                    let tempOpacity = 1 - (tempProg - 0.26) / 0.24;
+                    let tempOpacity = 1 - ((tempProg) / 0.25);
 
-                    if (tempOpacity < 0.3) tempOpacity = 0;
+                    if (tempOpacity < 0.2) tempOpacity = 0;
+                    if (tempOpacity > 0.8) tempOpacity = 1;
+
+                    console.log("tempOpacity", tempOpacity)
 
                     titleWrapperRef.current.style.setProperty(
                         'opacity',
@@ -58,11 +61,11 @@ function HomeCanvas({ progress, progressUpdate }){
                     );
                 }
 
-                if (tempProg < 0.51) {
-                    titleWrapperRef.current.style.setProperty('display', 'flex');
-                } else {
-                    titleWrapperRef.current.style.setProperty('display', 'none');
-                }
+                // if (tempProg < 0.51) {
+                //     titleWrapperRef.current.style.setProperty('display', 'flex');
+                // } else {
+                //     titleWrapperRef.current.style.setProperty('display', 'none');
+                // }
 
                 if (tempProg > 0.6 && tempProg < 0.99) {
 

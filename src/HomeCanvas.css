@@ -32,11 +32,11 @@
     opacity: 1;
   }
 
-  88%{
+  85%{
     opacity: 1;
   }
 
-  98%{
+  93%{
     opacity: 0;
   }
   100%{
@@ -89,9 +89,23 @@
     position: absolute;
     top: 50vh;
     transform: translateY(-50%);
-
     z-index: 5;
+    /* opacity: 1; */
+    /* animation: titleWrapperDisappears 1s linear paused;
+    animation-delay: calc(var(--progress) * -1s); */
 }
+
+/* @keyframes titleWrapperDisappears {
+  0%{
+    opacity: 1;
+  }
+  10%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+} */
 
 .title-wrapper-2{
     display: flex;
