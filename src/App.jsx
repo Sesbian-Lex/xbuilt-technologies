@@ -16,6 +16,7 @@ import OurServices2 from './OurServices2.jsx'
 import TimothyProfile from './assets/timothy-testimonals.png'
 import AlexiProfile from './assets/alexi-testimonals.png'
 import HomirxProfile from './assets/homirx-testimonals.png'
+import IgIcon from './assets/ig-icon.png'
 
 
 function App() {
@@ -160,7 +161,11 @@ function App() {
             We don't chase trends. We build a reliable digital systems that power your sales process, strengthen your brand, and deliver consisten, high-quality results
           </h3>
           <br/>
-          <CTAButton text="BOOK A FREE DISCOVERY CALL"/>
+          <div style={{display : "flex", flexDirection : "row", gap : 8 }}>
+            <CTAButton text="BOOK A FREE DISCOVERY CALL"/>
+            <CTAButton text='Chat on Instagram' icon={IgIcon}/>
+          </div>
+          
         </div>
 
 

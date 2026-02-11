@@ -1,5 +1,5 @@
 .accordion {
-  max-width: 600px;
+  max-width: 55%;
   margin: 2rem auto;
   border-radius: 8px;
   overflow: hidden;
@@ -12,7 +12,7 @@
 
 .accordion-header {
   width: 100%;
-  background: var(--background-color-gray);
+  background: color-mix(in srgb, var(--background-color-gray) 30%, #0c0c0c00 70%);
   color: #fff;
   padding: 1rem;
   text-align: left;
@@ -24,24 +24,26 @@
 }
 
 .accordion-header h2{
+    font-weight: 450;
     margin: 0;
 }
 
 
 .accordion-header:hover {
-  background: color-mix(in srgb, var(--background-color-gray) 80%, #0c0c0c 20%);
+  background: color-mix(in srgb, var(--background-color-gray) 50%, #0c0c0c90 50%);
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  background: var(--background-color-gray);
-  transition: max-height 0.5s ease-in-out;
+  background: color-mix(in srgb, var(--background-color-gray) 30%, #0c0c0c00 70%);
+  transition: max-height 1s ease-out;
 }
 
 .accordion-content h3 {
   padding: 1rem;
   margin: 0;
+  font-weight: 350;
 }
 
 /* Active state */
@@ -51,4 +53,5 @@
 
 .icon {
   font-size: 1.2rem;
+  transition: all 1s ease-out;
 }

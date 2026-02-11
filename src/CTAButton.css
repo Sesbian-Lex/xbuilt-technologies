@@ -1,5 +1,6 @@
 .cta-button{
   /* background-color: var(--accent-color-2); */
+  flex: 1;
   padding: 8px 54px;
   border-radius: 20px;
   /* color: color-mix(in srgb, var(--accent-color) 87%, rgb(0, 0, 0)); */
@@ -9,6 +10,12 @@
   background-image: linear-gradient(to right, #7990a0, #2f394f);
   color: rgba(240, 248, 255, 0.85);
   transition: all 0.5s ease-out;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
 }
 .cta-button:hover{
   background-image: linear-gradient(to right, #586a77, #252c3d);
@@ -16,6 +23,11 @@
   color: aliceblue;
 }
 
+.cta-button img {
+  /* flex: 1; */
+  aspect-ratio: 1/1;
+  height: 50px;
+}
 /* .cta-button-wrapper{
     background: linear-gradient(to right, #0c0c0c, transparent);
     z-index: 1;
