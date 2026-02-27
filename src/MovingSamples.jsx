@@ -1,10 +1,10 @@
 import './MovingSamples.css'
 import { useState, useRef, useEffect, Suspense } from 'react'
 import MovingSampleCard from './MovingSampleCard'
-import Img1 from './assets/temp-img-1.jpg'
-import Img2 from './assets/temp-img-2.jpg'
-import Img3 from './assets/temp-img-3.jpg'
-import Img4 from './assets/temp-img-4.jpg'
+import Img1 from './assets/homirx-page.png'
+import Img2 from './assets/timothy-page.png'
+import Img3 from './assets/sultin-page.png'
+import Img4 from './assets/alexi-page.png'
 import TornPaper from './assets/torn-paper.webp'
 
 function MovingSamples(){

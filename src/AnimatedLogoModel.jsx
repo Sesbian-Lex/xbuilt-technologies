@@ -1,11 +1,21 @@
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Float } from '@react-three/drei';
 import * as THREE from 'three'
+import './HomeCanvas.css'
 
 function AnimatedLogoModel({ progress }) {
     const { scene, animations } = useGLTF('/twoEightEight.glb')
+    const { scene: scene2, animations: animations2 } = useGLTF('/noAnimation.glb')
     const { actions, mixer } = useAnimations(animations, scene)
+
+    const [animationDoneState, setAnimationDoneState] = useState(false)
+
+    const box1 = scene2.getObjectByName('box1')
+    const box2 = scene2.getObjectByName('box2')
+    const box3 = scene2.getObjectByName('box3')
+    const box4 = scene2.getObjectByName('box4')
 
     const count = useRef(0)
     const currentTime = useRef(0)
@@ -21,6 +31,10 @@ function AnimatedLogoModel({ progress }) {
         })
     }, [actions])
 
+    useEffect(()=>{
+        setAnimationDoneState(false)
+    },[])
+
     useFrame((_, delta) => {
         if (!mixer) return
 
@@ -30,6 +44,8 @@ function AnimatedLogoModel({ progress }) {
             mixer.setTime(currentTime.current)
             count.current++
             return
+        } else {
+            setAnimationDoneState(true)
         }
 
         // Target time from progress
@@ -46,7 +62,44 @@ function AnimatedLogoModel({ progress }) {
         mixer.setTime(currentTime.current)
     })
 
-    return <primitive object={scene} position={[0, -2.5, 0]} />
+    const defaultProgress = 0.26;
+
+
+
+    return ( 
+        (progress == defaultProgress && animationDoneState) ?            
+            <group>
+                {/* <primitive object={scene} position={[0, -2.5, 0]} />  */}
+                <primitive object={scene2} position={[0, -2.5, 0]}/>
+                <FloatingBox object={box1} progress={progress} stopAt={0.27} speed={1.1254}/>
+                <FloatingBox object={box2} progress={progress} stopAt={0.27} speed={1.9485}/>
+                <FloatingBox object={box3} progress={progress} stopAt={0.27} speed={1.6581}/>
+                <FloatingBox object={box4} progress={progress} stopAt={0.27} speed={1.8453}/>
+
+            </group> 
+            :
+            <primitive object={scene} position={[0, -2.5, 0]} />    
+    )
 }
 
 export default AnimatedLogoModel
+
+function FloatingBox({ object, progress, stopAt, speed }) {
+  const baseY = object.position.y
+
+  useFrame((state, delta) => {
+    if (progress < stopAt) {
+      object.position.y =
+        baseY + Math.sin(state.clock.elapsedTime * speed) * 0.075
+    } else {
+      object.position.y = THREE.MathUtils.damp(
+        object.position.y,
+        baseY,
+        5,
+        delta
+      )
+    }
+  })
+
+  return null // IMPORTANT
+}

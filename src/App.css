@@ -200,7 +200,8 @@ h1, h2, h3, div{
 
 .section7{
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-color-red);
   /* background-color: aliceblue; */
   align-items: center;
@@ -219,9 +220,22 @@ h1, h2, h3, div{
 }
 
 .closing-img{
+  display: flex;
   width: 90%;
   z-index: 1;
-  
+  align-self: center;
+  justify-content: center;
+}
+
+.closing-img::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  left: 0;
+  background: linear-gradient(0deg , #0c0c0c, transparent);
+  z-index: 2;
 }
 
 .section7-text-wrapper{

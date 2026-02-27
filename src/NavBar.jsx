@@ -44,10 +44,10 @@ function NavBar({progress, showBar}) {
     return(
         <nav className='nav-bar' ref={navRef}>
             {/* <div className='background-div' ref={backgroundRef}></div> */}
-            <div className='logo-wrapper nav-column nav-item'>
-                <h2 className='old-font ' ref={logoRef} >XBUILT Technology</h2>
+            <a className='logo-wrapper nav-column nav-item' href='#home'>
+                <h2 className='old-font ' ref={logoRef}>XBUILT Technology</h2>
                 {/* <img src={dota2Logo}></img> */}
-            </div>
+            </a>
 
             <div className='nav-links nav-column nav-item'>
                 <a href='#home' ref={homeRef} className='nav-item'>HOME</a>

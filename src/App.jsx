@@ -153,7 +153,10 @@ function App() {
           <FloatingLogoCanvas/>
         </div>
 
-        <img src={ClosingImg} className='closing-img'/>
+        <div className='closing-img'>
+          <img src={ClosingImg} />
+        </div>
+        
 
         <div className='section7-text-wrapper'>
           <h1>Ready to Build a Site That Actually Works?</h1>

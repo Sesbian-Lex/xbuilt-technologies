@@ -230,6 +230,7 @@ function HomeCanvas({ progress, progressUpdate }){
                 <br/>
 
                 <h3 style={{fontWeight:'normal'}}>Tools and Platforms We Use</h3>
+                
                 <LogoCards/>
 
 
