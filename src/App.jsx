@@ -173,7 +173,13 @@ function App() {
 
 
         
-      </section>      
+      </section>
+
+      <footer className='footer'>
+        <p>&copy; {new Date().getFullYear()} All Rights Reserved.</p>
+        <button><p>Privacy Policy</p></button>
+        <button><p>Terms & Agreement</p></button>  
+      </footer>      
     </>
   )
 }

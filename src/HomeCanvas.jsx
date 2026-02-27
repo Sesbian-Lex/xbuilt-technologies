@@ -39,7 +39,7 @@ function HomeCanvas({ progress, progressUpdate }){
                     const tempProg = tempTop / (-viewHeight * 1.5);
 
                     progressUpdate(Math.min(1, Math.max(0.26, tempProg)));
-                    console.log("tempProg" , tempProg)
+                    // console.log("tempProg" , tempProg)
 
                     canvas.current.style.setProperty(
                         '--progress',
@@ -53,7 +53,7 @@ function HomeCanvas({ progress, progressUpdate }){
                     if (tempOpacity < 0.2) tempOpacity = 0;
                     if (tempOpacity > 0.8) tempOpacity = 1;
 
-                    console.log("tempOpacity", tempOpacity)
+                    // console.log("tempOpacity", tempOpacity)
 
                     titleWrapperRef.current.style.setProperty(
                         'opacity',
@@ -90,12 +90,12 @@ function HomeCanvas({ progress, progressUpdate }){
         };
 
         window.addEventListener("scroll", handleScroll);
-        console.log("HomeCanvas mounted");
+        // console.log("HomeCanvas mounted");
 
 
         return () => {
             window.removeEventListener("scroll", handleScroll);
-            console.log("HomeCanvas unmounted");
+            // console.log("HomeCanvas unmounted");
         };
 
     }, []);

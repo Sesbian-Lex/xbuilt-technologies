@@ -263,3 +263,21 @@ h1, h2, h3, div{
   font-weight: 400;
 }
 
+.footer{
+  color: var(--gray-text-color);
+  display: flex;
+  justify-content: start;
+  gap: 8px;
+  padding: 8px;
+}
+
+.footer button{
+  color: var(--gray-text-color);
+  background-color: #00000000;
+  box-shadow: none;
+  outline: none;  
+  border: none;
+  cursor: pointer;
+  /* border-radius: 0px; */
+}
+

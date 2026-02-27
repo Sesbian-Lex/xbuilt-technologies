@@ -12,9 +12,9 @@ function MovingSamples(){
     const parentRef = useRef();
     const grandParentRef = useRef();
 
-    useEffect(()=>{
-        console.log(window.innerWidth)
-    },[])
+    // useEffect(()=>{
+    //     console.log(window.innerWidth)
+    // },[])
 
       useEffect(() => {
 
@@ -33,7 +33,7 @@ function MovingSamples(){
             if(tempTop < 0 && tempTop > -viewHeight*1.5){
                 const tempProg = tempTop / (-viewHeight*1.5)
                 // console.log("triggerd")
-                console.log(tempProg)
+                // console.log(tempProg)
                 setProgress2( Math.min(100, Math.max(0, tempProg)))
 
             }
