@@ -24,8 +24,9 @@
 }
 
 .accordion-header h2{
-    font-weight: 450;
-    margin: 0;
+  font-size: calc((var(--h2) / var(--phi)) * 1.4);
+  font-weight: 450;
+  margin: 0;
 }
 
 
