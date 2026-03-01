@@ -66,30 +66,6 @@
 }
 
 
-.moving-sample-card img {
-    width: 100%;
-    animation: MovingImageAnimation 1s linear paused;
-    animation-delay: calc(var(--progress2) * -1s);   
-    margin-bottom: 12px;
-}
-
-@keyframes MovingImageAnimation {
-    0% {
-        width: 60%;
-
-    }
-
-    50% {
-        width: 60%;
-
-    }
-
-    100% {
-        width: 70%;
-    }
-}
-
-
 
 .moving-samples-wrapper > h2 {
     position: absolute;
@@ -242,4 +218,94 @@
     top: 30%;
     animation: TextDisappear 1s linear paused;
     animation-delay: calc(var(--progress2) * -1s);
+}
+
+.disappearing-laptop{
+    /* position: relative; */
+    /* display: block; */
+    /* justify-content: center;
+    align-items: center;
+    align-content: center; */
+    /* width: 70%; */
+    animation: MovingLaptopAnimation 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s); 
+    /* aspect-ratio: 16/9; */
+    /* top: 0; */
+    /* background-image: url('./assets/laptop.png'); */
+    /* background-repeat: no-repeat;
+    /* background-clip: padding-box ; */
+    /* background-position: top; 
+    background-size: contain; */
+
+    /* padding-top: 5px;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-bottom: 46px; */
+}
+
+.moving-sample-card .main-img {
+    align-self: center;
+    /* width: 100%;   */
+    animation: MovingImageAnimation 1s linear paused;
+    animation-delay: calc(var(--progress2) * -1s); 
+    border-style: solid;
+    border-color: #0c0c0c;
+    border-bottom-width: 0%;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    /* margin-bottom: 12px;
+    margin-top: 2px;
+    margin-left: 6px;
+    margin-right: 6px; */
+}
+
+@keyframes MovingImageAnimation {
+    0% {
+        width: 50%;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 0px;
+
+    }
+
+    50% {
+        width: 50%;
+        border-bottom-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-top-width: 0px;
+
+    }
+
+    100% {
+        width: 60%;
+        border-bottom-width: 12px;
+        border-left-width: 6px;
+        border-right-width: 6px;
+        border-top-width: 6px;
+    }
+}
+
+
+@keyframes MovingLaptopAnimation {
+    0% {
+        width: 65%;
+        opacity: 0;
+
+    }
+
+    50% {
+        width: 65%;
+        opacity: 0;
+
+    }
+
+    100% {
+        width: 75%;
+        opacity: 1;
+    }
 }
