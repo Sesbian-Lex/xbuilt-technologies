@@ -1,6 +1,7 @@
 import { useRef, useEffect, useCallback } from 'react'
 import './NavBar.css'
 import CTAButton from './CTAButton'
+import CalendlyPopUp from './CalendlyPopUp';
 
 function NavBar({progress, showBar}) {
     //used the same colorProgress varaible for easier syntax
@@ -25,7 +26,6 @@ function NavBar({progress, showBar}) {
         colorProgress = (progress - minProg) / (maxProg - minProg); //gets the percentatge
         // console.log((colorProgress*99)/100)
         navRef.current.style.setProperty('--progress', `${Math.min(1, Math.max(0, colorProgress))}`)//limits it to 99% but also dividing again to 100 to return to decimal
-
         // const currentScroll = window.scrollY
         // if(currentScroll > window.innerHeight * 2) navRef.current.style.setProperty('--progress', `1`)
     }, [progress])
@@ -58,7 +58,8 @@ function NavBar({progress, showBar}) {
 
             <div className='cta-wrapper nav-column nav-item' >
                 <div ref={ctaRef} className='button-wrapper'>
-                   <CTAButton/> 
+                   {/* <CTAButton/>  */}
+                   <CalendlyPopUp/>
                 </div>
                 
             </div>

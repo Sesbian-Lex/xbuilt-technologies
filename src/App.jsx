@@ -17,19 +17,16 @@ import TimothyProfile from './assets/timothy-testimonals.png'
 import AlexiProfile from './assets/alexi-testimonals.png'
 import HomirxProfile from './assets/homirx-testimonals.png'
 import IgIcon from './assets/ig-icon.png'
+import CalendlyPopUp from './CalendlyPopUp.jsx'
 
 
 function App() {
   const [progress, setProgress] = useState(0.26)
   const [showBar, setShowBar] = useState(false)
 
-  // useEffect(()=>{console.log(progress)},[progress])
-  useEffect(()=>{
-    window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/xbuilt-technologies/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }
-  },[])
-
   return (
     <>
+      {/* <CalendlyPopUp/> */}
       <ScrollBar showBar={showBar} setShowBar={setShowBar}/>
       <NavBar 
       progress={progress} showBar={showBar}
@@ -168,8 +165,9 @@ function App() {
           </h3>
           <br/>
           <div style={{display : "flex", flexDirection : "row", gap : 8 }}>
-            <CTAButton text="BOOK A FREE DISCOVERY CALL"/>
-            <CTAButton text='Chat on Instagram' icon={IgIcon}/>
+            <CalendlyPopUp text="BOOK A FREE DISCOVERY CALL"/>
+            {/* <CTAButton text="BOOK A FREE DISCOVERY CALL"/> */}
+            <CTAButton text='Chat on Instagram' icon={IgIcon} href='https://www.instagram.com/xbuilt_technology/' newTab={true}/>
           </div>
           
         </div>
