@@ -24,6 +24,9 @@ function App() {
   const [showBar, setShowBar] = useState(false)
 
   // useEffect(()=>{console.log(progress)},[progress])
+  useEffect(()=>{
+    window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/xbuilt-technologies/30min', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }
+  },[])
 
   return (
     <>

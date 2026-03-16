@@ -1,6 +1,6 @@
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Float } from '@react-three/drei';
 import * as THREE from 'three'
 import './HomeCanvas.css'
@@ -9,6 +9,7 @@ function AnimatedLogoModel({ progress }) {
     const { scene, animations } = useGLTF('/twoEightEight.glb')
     const { scene: scene2, animations: animations2 } = useGLTF('/noAnimation.glb')
     const { actions, mixer } = useAnimations(animations, scene)
+
 
     const [animationDoneState, setAnimationDoneState] = useState(false)
 
@@ -27,13 +28,19 @@ function AnimatedLogoModel({ progress }) {
     useEffect(() => {
         Object.values(actions).forEach(action => {
             action.play()
-            // action.paused = true // IMPORTANT
+            // action.paused = true
         })
     }, [actions])
 
-    useEffect(()=>{
-        setAnimationDoneState(false)
-    },[])
+    // useEffect(()=>{
+    //     console.log("animation is done? ", animationDoneState)
+
+    //     window.addEventListener('scroll', stopScroll)
+    // },[animationDoneState])
+
+    // const stopScroll = (e) => {
+    //     e.preventDefault()
+    // }
 
     useFrame((_, delta) => {
         if (!mixer) return

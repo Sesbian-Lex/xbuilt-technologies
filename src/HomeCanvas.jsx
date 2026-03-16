@@ -11,14 +11,7 @@ function HomeCanvas({ progress, progressUpdate }){
     const canvas = useRef();
     const canvasWrapperRef = useRef();
     const titleWrapperRef = useRef();
-     const titleWrapperRef2 = useRef();
-
-    //  useEffect(()=>{
-    //     if( window.scrollY > window.innerHeight) {
-    //         titleWrapperRef.current.style.setProperty('opacity', `0`)
-    //         titleWrapperRef.current.style.setProperty('display', 'none')
-    //     }
-    //  },[])
+    const titleWrapperRef2 = useRef();
 
     useEffect(() => {
 
