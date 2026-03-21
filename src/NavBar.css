@@ -122,15 +122,15 @@
     /* border: solid 1px var(--borders); */
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1600px) {
   .nav-bar{
-    height: 60px;
+    height: 68px;
   }
 }
 
-@media (max-width: 1499px) and (min-width: 900px)  {
+@media (max-width: 1599px) and (min-width: 900px)  {
   .nav-bar{
-    height: 48px;
+    height: 52px;
   }
 }
 
