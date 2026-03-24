@@ -21,13 +21,13 @@ function ServiceCarousel(){
         carouselWidth.current = carouselRef.current.getBoundingClientRect().width
     },[])
 
-    // useEffect(() => {
-    //     startAutoSlide();
+    useEffect(() => {
+        startAutoSlide();
 
-    //     return () => {
-    //         clearInterval(autoSlideRef.current);
-    //     };
-    // }, []);
+        return () => {
+            clearInterval(autoSlideRef.current);
+        };
+    }, []);
 
     //arrow handles to change the offset
     function leftArrowHandle() {
