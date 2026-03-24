@@ -1,9 +1,10 @@
 .service-carousel{
     display: block;
     position: relative;
-    width: 100vw;
+    width: 55vw;
     /* height: calc((100vw / 4)); */
-    aspect-ratio: 20 / 5;
+    /* change the aspect ratio too if we change how much of the carousel is shown */
+    aspect-ratio: 12 / 5;
     /* background-color: bisque; */
     pointer-events: auto;
     z-index: 4;
@@ -19,7 +20,7 @@
   width: 8%;
   height: 100%;
   left: 0;
-  background: linear-gradient(to right, #0c0c0c, transparent);
+  /* background: linear-gradient(to right, #0c0c0c, transparent); */
   z-index: 10;
   transition: all 0.5s ease-in-out;
   
@@ -36,7 +37,7 @@
   width: 8%;
   height: 100%;
   right: 0;
-  background: linear-gradient(to left, #3d2727, transparent);
+  /* background: linear-gradient(to left, #3d2727, transparent); */
   z-index: 100;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
@@ -67,4 +68,14 @@
     height: 100%;
     width: 100%;
     pointer-events: auto;
+}
+
+.fade-right {
+  -webkit-mask-image: linear-gradient(to right, black 60%, transparent);
+  mask-image: linear-gradient(to right, black 60%, transparent);
+}
+
+.fade-left {
+  -webkit-mask-image: linear-gradient(to left, black 60%, transparent);
+  mask-image: linear-gradient(to left, black 60%, transparent);
 }

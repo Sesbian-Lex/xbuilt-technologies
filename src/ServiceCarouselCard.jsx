@@ -10,55 +10,77 @@ function ServiceCarouselCard({offset, img, parentWidth, destination}){
     // },[])
 
     useEffect(()=>{
+        const total_cards = 5//change this if more
+        const shown_cards = 3
+        //remember to change the aspect ratio of service-carousel
+        //  if any of the values here change
+        //a card is 4/5 aspect ration, so 3-card-wide carousel is 12/5
+
         // console.log(offset)
         // positive offset 
         //else for negative offset
-        if(offset > 6){
-            offset %= 7;
+        if(offset > total_cards - 1){
+            offset %= total_cards;
         } else if(offset<0){ 
-            offset = ((offset%7)+7)%7;
+            offset = ((offset%total_cards)+total_cards)%total_cards;
             // console.log("negative: ", offset%5)
         }
 
         // console.log("cardOffset:", offset)
-        //get the width of the object
+        //get the width of the card
         const width = carouselCardWrapper.current.getBoundingClientRect().width;
-        //move the object to position depending on the parent and current offset
-        carouselCardWrapper.current.style.left = `${((parentWidth.current)/5) * offset}px`
+
+                //move the card to position depending on the parent and current offset
+        carouselCardWrapper.current.style.left = `${((parentWidth.current)/shown_cards) * offset}px`
+
         //middlemost offset being more noticable
-        if (offset == 2){
+        if (offset == 1){
              carouselCardWrapper.current.style.transform = 'scale(1)';
              carouselCardWrapper.current.style.zIndex = '3';
              carouselCardWrapper.current.style.opacity = '1';
         }
-        else if (offset == 1 || offset == 3){
-             carouselCardWrapper.current.style.transform = 'scale(0.95)';
+        else if (offset == 0 || offset == 2){
+             carouselCardWrapper.current.style.transform = 'scale(0.90)';
              carouselCardWrapper.current.style.zIndex = '2';
              carouselCardWrapper.current.style.opacity = '0.9';
         }
-        else if (offset == 0 || offset == 4){
-             carouselCardWrapper.current.style.transform = 'scale(0.85)';
-             carouselCardWrapper.current.style.zIndex = '1';
-             carouselCardWrapper.current.style.opacity = '0.75';
+        // else if (offset == 3 || offset == 4){
+        //      carouselCardWrapper.current.style.transform = 'scale(0.85)';
+        //      carouselCardWrapper.current.style.zIndex = '1';
+        //      carouselCardWrapper.current.style.opacity = '0.75';
 
-             if (offset == 0){
-                carouselCardWrapper.current.style.left = `${(parentWidth.current*0.015 )}px`
-             } else if (offset == 4){
-                carouselCardWrapper.current.style.left = `${(parentWidth.current) - (parentWidth.current*0.015) - (parentWidth.current/5)}px`
-             }
-        } 
-        else if (offset == 5){
+        //      if (offset == 0){
+        //         carouselCardWrapper.current.style.left = `${(parentWidth.current*0.015 )}px`
+        //      } else if (offset == 4){
+        //         carouselCardWrapper.current.style.left = `${(parentWidth.current) - (parentWidth.current*0.015) - (parentWidth.current/5)}px`
+        //      }
+        // } 
+        else if (offset == 3){
              carouselCardWrapper.current.style.transform = 'scale(0.75)';
              carouselCardWrapper.current.style.zIndex = '-1';
              carouselCardWrapper.current.style.opacity = '0';
-        } else if (offset == 6){
+        } else if (offset == 4){
              carouselCardWrapper.current.style.transform = 'scale(0.75)';
              carouselCardWrapper.current.style.zIndex = '-1';
              carouselCardWrapper.current.style.opacity = '0';
-             carouselCardWrapper.current.style.left = `${-(parentWidth.current/5)}px`
+             carouselCardWrapper.current.style.left = `${-(parentWidth.current/total_cards)}px`
         }
 
+        if(offset == 2){
+            carouselCardWrapper.current.classList.add("fade-right")
+        }  
+        else if (offset == 0){
+            carouselCardWrapper.current.classList.add("fade-left")
+        }
+        else {
+            carouselCardWrapper.current.classList.remove("fade-right")
+            carouselCardWrapper.current.classList.remove("fade-left")
+        }
+
+        // console.log("card ", offset, ": ", `${((parentWidth.current)/shown_cards) * offset}px`)
+
     },[offset])
+
     //testing if img is clicked  
     // function imgClick(){
     //     console.log("image clicked", offset)

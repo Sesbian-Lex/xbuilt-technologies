@@ -21,13 +21,13 @@ function ServiceCarousel(){
         carouselWidth.current = carouselRef.current.getBoundingClientRect().width
     },[])
 
-    useEffect(() => {
-        startAutoSlide();
+    // useEffect(() => {
+    //     startAutoSlide();
 
-        return () => {
-            clearInterval(autoSlideRef.current);
-        };
-    }, []);
+    //     return () => {
+    //         clearInterval(autoSlideRef.current);
+    //     };
+    // }, []);
 
     //arrow handles to change the offset
     function leftArrowHandle() {
@@ -60,8 +60,8 @@ function ServiceCarousel(){
             <ServiceCarouselCard img={CRMPipe} offset={offset + 2} parentWidth={carouselWidth} destination={'#crmPipe'}/>
             <ServiceCarouselCard img={WebDesign} offset={offset + 3} parentWidth={carouselWidth} destination={'#webDesign'} />
             <ServiceCarouselCard img={VidEdit} offset={offset + 4} parentWidth={carouselWidth} destination={'#vidEdit'}/>
-            <ServiceCarouselCard img={LandingPageImg} offset={offset + 5} parentWidth={carouselWidth} destination={'#landingPage'}/>
-            <ServiceCarouselCard img={FunnelDesign} offset={offset + 6} parentWidth={carouselWidth} destination={'#funnelDesign'}/>
+            {/* <ServiceCarouselCard img={LandingPageImg} offset={offset + 5} parentWidth={carouselWidth} destination={'#landingPage'}/>
+            <ServiceCarouselCard img={FunnelDesign} offset={offset + 6} parentWidth={carouselWidth} destination={'#funnelDesign'}/> */}
             
             <div className='right-arrow' ref={rightArrow} onClick={rightArrowHandle}>🠾</div>
         </div>
